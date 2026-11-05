@@ -3,14 +3,14 @@
 <title>Saddam · Abhishek · Shivam — Class of 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,900;1,6..96,500&family=Manrope:wght@300;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#07070b;--fg:#f3efe8;--mute:#8d8a96;--gold:#e6c785;--rose:#ff9ec4;--line:rgba(243,239,232,.14)}
+:root{--bg:#050505;--fg:#f3efe8;--mute:#9a917c;--gold:#e6c785;--rose:#ffe3a1;--line:rgba(230,199,133,.2)}
 *{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--fg);font:300 1.05rem/1.6 Manrope,system-ui,sans-serif;overflow-x:hidden}
+body{background:radial-gradient(1200px 700px at 12% -8%,rgba(230,199,133,.20),transparent 60%),radial-gradient(900px 650px at 100% 45%,rgba(184,134,47,.16),transparent 60%),radial-gradient(800px 600px at 0% 100%,rgba(120,80,20,.22),transparent 60%),linear-gradient(165deg,#000 0%,#0e0a04 40%,#1b1306 68%,#000 100%);background-attachment:fixed;background-color:#000;color:var(--fg);font:300 1.05rem/1.6 Manrope,system-ui,sans-serif;overflow-x:hidden}
 body.lock{overflow:hidden;height:100%}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .aur{position:fixed;inset:0;z-index:0;pointer-events:none;filter:blur(90px);opacity:.5}
 .aur i{position:absolute;border-radius:50%;width:46vw;height:46vw;animation:dr 22s ease-in-out infinite alternate}
-.aur i:nth-child(1){background:#3a2a6e;left:-10vw;top:-10vw}.aur i:nth-child(2){background:#6e2f4d;right:-12vw;top:30vh;animation-delay:-8s}.aur i:nth-child(3){background:#6b4f1d;left:25vw;bottom:-25vw;animation-delay:-14s}
+.aur i:nth-child(1){background:#8a6a2c;left:-10vw;top:-10vw}.aur i:nth-child(2){background:#5a3d0c;right:-12vw;top:30vh;animation-delay:-8s}.aur i:nth-child(3){background:#c99a3e;left:25vw;bottom:-25vw;animation-delay:-14s;opacity:.7}
 @keyframes dr{to{transform:translate(8vw,6vh) scale(1.2)}}
 
 #intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;text-align:center;cursor:pointer}
@@ -55,7 +55,7 @@ h2{font:500 clamp(2.2rem,6vw,4.6rem)/1 'Bodoni Moda',serif;letter-spacing:-.02em
 .stage{height:min(78vh,640px);perspective:1500px;display:grid;place-items:center;margin-top:20px;cursor:grab;touch-action:pan-y;--pw:clamp(150px,21vw,250px)}
 .stage:active{cursor:grabbing}
 #ring{position:relative;width:var(--pw);height:calc(var(--pw)*1.38);transform-style:preserve-3d}
-.pn{position:absolute;inset:0;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#2a2233,#0d0c13);border:1px solid rgba(230,199,133,.4);backface-visibility:hidden;-webkit-backface-visibility:hidden;display:grid;place-items:center;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.pn{position:absolute;inset:0;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#2c2411,#0a0905);border:1px solid rgba(230,199,133,.4);backface-visibility:hidden;-webkit-backface-visibility:hidden;display:grid;place-items:center;box-shadow:0 30px 80px rgba(0,0,0,.6)}
 .pn b{font:900 5rem 'Bodoni Moda',serif;color:rgba(230,199,133,.25)}
 .pn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
 #cap{text-align:center;font:italic 500 clamp(1.8rem,5vw,3.4rem) 'Bodoni Moda',serif;min-height:1.3em;margin-top:6px;transition:opacity .3s}
@@ -87,7 +87,7 @@ footer .bd{font:900 clamp(2.8rem,13vw,11rem)/.9 'Bodoni Moda',serif;letter-spaci
 footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:uppercase;font-size:.8rem}
 #lb{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:80;display:none;place-items:center;cursor:zoom-out}
 #lb img{max-width:92vw;max-height:90vh}
-#music{position:fixed;right:18px;bottom:18px;z-index:40;background:rgba(7,7,11,.7);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:11px 18px;font:500 .72rem Manrope;letter-spacing:.2em;cursor:pointer;text-transform:uppercase}
+#music{position:fixed;right:18px;bottom:18px;z-index:40;background:rgba(5,5,5,.75);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:11px 18px;font:500 .72rem Manrope;letter-spacing:.2em;cursor:pointer;text-transform:uppercase}
 #music:hover{background:var(--gold);color:#000}
 
 .sv{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(8px,2vw,28px);align-items:center;margin-top:40px}
@@ -101,11 +101,42 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 .ar:hover{background:var(--gold);color:#000;border-color:var(--gold)}
 #ct{text-align:center;margin:26px 0 16px;font:italic 500 1.5rem 'Bodoni Moda',serif;color:var(--gold)}
 #th{display:flex;gap:8px;overflow-x:auto;padding:6px 2px 14px;justify-content:safe center}
-#th div{flex:0 0 74px;height:74px;border:1px solid var(--line);background:#101018;opacity:.4;cursor:pointer;position:relative;transition:.3s}
+#th div{flex:0 0 74px;height:74px;border:1px solid var(--line);background:#110f09;opacity:.4;cursor:pointer;position:relative;transition:.3s}
 #th div.on{opacity:1;border-color:var(--gold)}#th div:hover{opacity:1}
 #th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 @media(max-width:700px){.ar{width:40px;height:40px;font-size:1.5rem}.hero .hint{display:none}}
 ::selection{background:var(--gold);color:#000}
+
+/* ---- black & gold polish ---- */
+:root{--rose:#ffd98a}
+.spot{position:fixed;left:0;top:0;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(230,199,133,.24),rgba(230,199,133,.06) 45%,transparent 68%);z-index:0;pointer-events:none;transition:transform .35s ease-out;mix-blend-mode:screen;transform:translate(-999px,-999px)}
+.grain{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.08;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+h2,.hero .lo b{background:linear-gradient(100deg,#b8862f 10%,#fff3d1 40%,#e6c785 55%,#b8862f 90%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 8s linear infinite;padding-bottom:.08em}
+.mqw{border-image:linear-gradient(90deg,transparent,var(--gold),transparent) 1;background:linear-gradient(90deg,transparent,rgba(230,199,133,.06),transparent)}
+.nm{border-image:linear-gradient(90deg,var(--gold),transparent 85%) 1}
+.pn{border-color:rgba(230,199,133,.65);box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 46px rgba(230,199,133,.2)}
+.cta a{background:linear-gradient(145deg,rgba(230,199,133,.08),rgba(0,0,0,.4));border-color:rgba(230,199,133,.35)}
+.cta a::before{background:linear-gradient(120deg,#b8862f,#ffe9b0 50%,#e6c785)}
+footer{background:radial-gradient(900px 400px at 50% 100%,rgba(230,199,133,.18),transparent 70%)}
+.rv{opacity:0}
+.rv.in{opacity:1;animation:up .9s cubic-bezier(.2,.7,.2,1) backwards}
+@keyframes up{from{opacity:0;transform:translateY(46px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@media(hover:none){.spot{display:none}}
+@media(prefers-reduced-motion:reduce){h2,.hero .lo b{animation:none!important}.rv{opacity:1!important}.rv.in{animation:none!important}.spot{display:none}}
+:root{--mute:#b3aa94}
+.aur{inset:-120px;opacity:.95;background:linear-gradient(125deg,#000,#1a1206,#2e2008,#140d03,#000);background-size:320% 320%;animation:gs 20s ease-in-out infinite}
+@keyframes gs{50%{background-position:100% 100%}}
+.aur i{opacity:.35;animation-duration:18s}
+.aur i:nth-child(1){background:#b8862f}
+.aur i:nth-child(2){background:#e6c785}
+.aur i:nth-child(3){background:#7a5a1c}
+.aur i:nth-child(4){background:#ffe3a1;right:15vw;top:45vh;animation-delay:-4s}
+h2{background:linear-gradient(100deg,#fff 20%,#ffe3a8 55%,var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.1em}
+.cta a{background:rgba(230,199,133,.06);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.nm{border-color:rgba(230,199,133,.28)}
+.rv{opacity:0;transform:translateY(46px);filter:blur(8px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
+.rv.in{opacity:1;transform:none;filter:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;filter:none}.aur{animation:none}}
 @media(prefers-reduced-motion:reduce){
   *{transition-duration:.01s!important}
   .aur i,.hint,footer .bd{animation:none!important}
@@ -128,40 +159,41 @@ function enterSite(){
   intro.classList.add('open');
   document.body.classList.remove('lock');
   setTimeout(function(){intro.classList.add('gone')},1500);
+  
   try{var a=document.getElementById('bgm'),p=a.play();
     if(p&&p.then)p.then(function(){document.getElementById('music').textContent='\u266A Pause music'}).catch(function(){})}catch(e){}
 }
 </script>
 
-<div class="aur"><i></i><i></i><i></i></div>
+<div class="aur"><i></i><i></i><i></i><i></i></div><div class="spot" id="spot"></div><div class="grain"></div>
 
 <div id="intro"><div class="h h1"></div><div class="h h2"></div><div class="t"><p>UoW SCM</p><p>One Year</p><p>Countless late nights.</p><p>One degree.</p><button id="enter" type="button">ENTER</button></div></div>
 
-<nav><a class="l" href="#home">UoW SCM Class of 2026</a><div><a href="#home" data-v="home">Home</a><a href="#photos" data-v="photos">Photos</a><a href="#videos" data-v="videos">Videos</a></div></nav>
+<nav><a class="l" href="#home">UOW SCM CLASS OF 2026</a><div><a href="#home" data-v="home">Home</a><a href="#photos" data-v="photos">Photos</a><a href="#videos" data-v="videos">Videos</a></div></nav>
 
 <main class="view" id="v-home">
-<div class="hero"><canvas id="pc"></canvas><div class="lo"><b>Master of Supply Chain Management</b><span>Saddam Ansari · Abhishek Trivedi · Shivam Singh · Bimala Upadhyaya · Akash Singh</span></div><div class="hint">Move through the gold. Click to scatter.</div></div>
+<div class="hero"><canvas id="pc"></canvas><div class="lo"><b>MASTER OF SUPPLY CHAIN MANAGEMENT</b><span>Saddam Ansari · Abhishek Trivedi · Shivam Singh · Bimala Upadhyaya · Akash Singh</span></div><div class="hint">Move through the gold. Click to scatter.</div></div>
 
 <div class="mqw"><div id="mq"></div></div>
 
-<section><h2>The graduates</h2><p class="sub">Drag to turn the ring.</p>
+<section><h2>THE GRADUATES</h2><p class="sub">Drag to turn the ring.</p>
 <div class="stage" id="stage"><div id="ring"></div></div><div id="cap">&nbsp;</div></section>
 
 <section><h2>Five names.<br>One class.</h2><div class="names" style="margin-top:40px">
-<a class="nm" data-i="IMG_2049.jpg"><span>Saddam</span><small>Ansari</small></a>
-<a class="nm" data-i="Insta_Saver_@abhi.k.trivedi_dp_HD.jpg"><span>Abhishek</span><small>Trivedi</small></a>
-<a class="nm" data-i="Insta_Saver_@shivu_17_dp_HD.jpg"><span>Shivam</span><small>Singh</small></a>
-<a class="nm" data-i="WhatsApp Image 2026-10-23 at 21.24.52.jpeg"><span>Bimala</span><small>Upadhyaya</small></a>
-<a class="nm" data-i="akash & Abhi.jpg"><span>Akash</span><small>Singh</small></a>
+<a class="nm" data-i="IMG_2049.jpg"><span>SADDAM</span><small>ANSARI</small></a>
+<a class="nm" data-i="Insta_Saver_@abhi.k.trivedi_dp_HD.jpg"><span>ABHISHEK</span><small>TRIVEDI</small></a>
+<a class="nm" data-i="Insta_Saver_@shivu_17_dp_HD.jpg"><span>SHIVAM</span><small>SINGH</small></a>
+<a class="nm" data-i="WhatsApp Image 2026-10-23 at 21.24.52.jpeg"><span>BIMALA</span><small>UPADHYAYA</small></a>
+<a class="nm" data-i="akash & Abhi.jpg"><span>AKASH SINGH</span><small>SINGH</small></a>
 </div></section>
 <img id="fl" alt="">
 
-<section><div class="cta"><a href="#photos"><b>Photos</b>Every frame of the day</a><a href="#videos"><b>Videos</b>Watch it again</a></div></section>
+<section><div class="cta"><a href="#photos"><b>PHOTOS</b>Every frame of the day</a><a href="#videos"><b>Videos</b>Watch it again</a></div></section>
 </main>
 
-<main class="view" id="v-photos"><section class="page"><h2>The ceremony</h2><p class="sub">Photos from graduation day. Tap any photo to enlarge it.</p><div class="sv"><button class="ar" id="pv" aria-label="Previous photo">&#8249;</button><div class="fm" id="fm"><div id="tl"><img id="si" alt=""></div><p id="sm"></p></div><button class="ar" id="nx" aria-label="Next photo">&#8250;</button></div><div id="ct"></div><div id="th"></div></section></main>
+<main class="view" id="v-photos"><section class="page"><h2>THE CEREMONY</h2><p class="sub">Photos from graduation day.</p><div class="sv"><button class="ar" id="pv" aria-label="Previous photo">&#8249;</button><div class="fm" id="fm"><div id="tl"><img id="si" alt=""></div><p id="sm"></p></div><button class="ar" id="nx" aria-label="Next photo">&#8250;</button></div><div id="ct"></div><div id="th"></div></section></main>
 
-<main class="view" id="v-videos"><section class="page"><h2>The ceremony, on film</h2><p class="sub">Videos from graduation day.</p><div class="vgrid"></div></section></main>
+<main class="view" id="v-videos"><section class="page"><h2>The Ceremony, Moments in Motion.</h2><p class="sub">Videos from graduation day.</p><div class="vgrid"></div></section></main>
 
 <footer><div class="bd">Congratulations</div><p>Saddam Ansari · Abhishek Trivedi · Shivam Singh · Bimala Upadhyaya · Akash Singh ~ a degree well earned</p></footer>
 
@@ -205,15 +237,27 @@ addEventListener('hashchange',route);
 const c=$('#pc'),x=c.getContext('2d'),words=['CONGRATS','2026','SCM','PROUD','SHIVAM','SADDAM','ABHISHEK','BIMALA','AKASH'];
 const N=innerWidth<700?2600:5200;
 let W=0,H=0,P=[],wi=0,mx=-999,my=-999,vis=true,lastW=0;
-for(let i=0;i<N;i++)P.push({x:innerWidth/2,y:innerHeight/2,vx:(Math.random()-.5)*30,vy:(Math.random()-.5)*30,tx:0,ty:0,s:Math.random()*.8+.7,h:35+Math.random()*25,l:60+Math.random()*30,o:Math.random()*6});
+for(let i=0;i<N;i++)P.push({x:innerWidth/2,y:innerHeight/2,vx:(Math.random()-.5)*30,vy:(Math.random()-.5)*30,tx:0,ty:0,s:Math.random()*.8+.7,h:38+Math.random()*16,l:58+Math.random()*28,o:Math.random()*6,w:Math.random()<.3});
 function target(){
   W=c.width=c.clientWidth;H=c.height=c.clientHeight;lastW=W;if(!W)return;
   const o=document.createElement('canvas');o.width=W;o.height=H;
   const q=o.getContext('2d'),w=words[wi];
-  let fs=Math.min(W/(w.length*.68),H*.46);
-  q.font='900 '+fs+'px "Bodoni Moda",Georgia,serif';q.textAlign='center';q.textBaseline='middle';q.fillStyle='#fff';q.fillText(w,W/2,H*.44);
-  const d=q.getImageData(0,0,W,H).data,g=Math.max(3,Math.round(W/260)),T=[];
-  for(let yy=0;yy<H;yy+=g)for(let xx=0;xx<W;xx+=g)if(d[(yy*W+xx)*4+3]>128)T.push([xx,yy]);
+  const FF='"Bodoni Moda",Georgia,serif';
+  q.font='900 100px '+FF;
+  const wpx=q.measureText(w).width||100*w.length*.8;
+  /* fit the real measured width inside 86% of the canvas, and cap by height */
+  const fs=Math.min(100*(W*.86)/wpx,H*.46);
+  q.font='900 '+fs+'px '+FF;q.textAlign='center';q.textBaseline='middle';
+  q.fillStyle='#fff';q.strokeStyle='#fff';q.lineJoin='round';q.lineWidth=Math.max(2,fs*.03);
+  q.fillText(w,W/2,H*.44);q.strokeText(w,W/2,H*.44);
+  const d=q.getImageData(0,0,W,H).data,T=[];
+  /* start fine, coarsen only until the point count roughly matches the particle count */
+  let g=2;
+  for(;g<40;g++){
+    T.length=0;
+    for(let yy=0;yy<H;yy+=g)for(let xx=0;xx<W;xx+=g)if(d[(yy*W+xx)*4+3]>60)T.push([xx,yy]);
+    if(T.length<=N*1.3)break;
+  }
   for(let i=T.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[T[i],T[j]]=[T[j],T[i]]}
   P.forEach((p,i)=>{const t=T[i%T.length]||[W/2,H/2];p.tx=t[0]+(Math.random()-.5)*2;p.ty=t[1]+(Math.random()-.5)*2});
 }
@@ -235,7 +279,7 @@ function frame(t){
     }
     if(e>=1){rot=0;flipStart=0}
   }
-  x.clearRect(0,0,W,H);
+  x.clearRect(0,0,W,H);x.globalCompositeOperation='lighter';
   const cx=W/2,cy=H*.44,cs=Math.cos(rot),sn=Math.sin(rot);
   for(const p of P){
     let dx=mx-p.x,dy=my-p.y,d2=dx*dx+dy*dy;
@@ -243,7 +287,7 @@ function frame(t){
     p.vx+=(p.tx-p.x)*.012;p.vy+=(p.ty-p.y)*.012;p.vx*=.9;p.vy*=.9;p.x+=p.vx;p.y+=p.vy;
     const ox=p.x-cx,z=ox*sn,k=900/(900+z);
     const px=cx+ox*cs*k,py=cy+(p.y-cy)*k,sz=p.s*2*k;
-    x.fillStyle='hsla('+p.h+',80%,'+(p.l+Math.sin(t/400+p.o)*14)+'%,'+(.65+Math.sin(t/300+p.o)*.3)+')';
+    const tw=Math.sin(t/400+p.o),al=.65+Math.sin(t/300+p.o)*.3;x.fillStyle=p.w?'hsla(40,25%,'+(88+tw*10)+'%,'+al+')':'hsla('+p.h+',78%,'+(p.l+tw*14)+'%,'+al+')';
     x.fillRect(px,py,sz,sz);
   }
 }
@@ -309,7 +353,8 @@ $$('.nm').forEach(a=>{
   a.addEventListener('pointerenter',e=>{if(e.pointerType==='touch')return;fl.src=U(a.dataset.i);fl.classList.add('on')});
   a.addEventListener('pointerleave',()=>fl.classList.remove('on'));
 });
-addEventListener('pointermove',e=>{tx=e.clientX+30;ty=e.clientY-120});
+const spot=$('#spot');
+addEventListener('pointermove',e=>{tx=e.clientX+30;ty=e.clientY-120;if(spot)spot.style.transform='translate('+(e.clientX-320)+'px,'+(e.clientY-320)+'px)'});
 (function f(){
   fx+=(tx-fx)*.12;fy+=(ty-fy)*.12;
   const rt=Math.max(-12,Math.min(12,(tx-fx)*.15));
@@ -428,8 +473,14 @@ function renderVideos(l){
   });
 }
 
+
 /* ---- sizing + start ---- */
 function sizeAll(){buildRing();target()}
+/* ---- scroll reveal ---- */
+if('IntersectionObserver' in window&&!reduce){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  $$('h2,.sub,.nm,.cta a,.vf').forEach(el=>{el.classList.add('rv');io.observe(el)});
+}
 go(0);
 route();
 </script></body></html>
