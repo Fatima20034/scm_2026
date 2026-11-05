@@ -25,9 +25,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 #intro .t{position:relative;z-index:2;transition:opacity .5s;padding:0 5vw}
 #intro.open .t{opacity:0}
 .t p{font:italic 500 clamp(1.8rem,6vw,4rem)/1.2 'Bodoni Moda',serif;opacity:0;animation:li 1s forwards}
-.t p:nth-child(1){animation-delay:.3s}.t p:nth-child(2){animation-delay:.9s}.t p:nth-child(3){animation-delay:1.5s;color:var(--gold)}
+.t p:nth-child(1){animation-delay:.3s}
+.t p:nth-child(2){animation-delay:.9s}
+.t p:nth-child(3){animation-delay:1.5s}
+.t p:nth-child(4){animation-delay:2.1s;color:var(--gold)}
 @keyframes li{from{opacity:0;filter:blur(12px);transform:translateY(14px)}to{opacity:1;filter:none;transform:none}}
-#enter{margin-top:46px;background:none;border:1px solid var(--gold);color:var(--gold);padding:14px 38px;border-radius:99px;font:500 .8rem Manrope;letter-spacing:.3em;cursor:pointer;opacity:0;animation:li 1s 1.5s forwards;transition:.3s}
+#enter{margin-top:46px;background:none;border:1px solid var(--gold);color:var(--gold);padding:14px 38px;border-radius:99px;font:500 .8rem Manrope;letter-spacing:.3em;cursor:pointer;opacity:0;animation:li 1s 2.4s forwards;transition:.3s}
 #enter:hover{background:var(--gold);color:#000}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;mix-blend-mode:difference}
@@ -39,7 +42,7 @@ section{padding:110px 5vw;max-width:1300px;margin:auto}
 
 /* hero */
 .hero{position:relative;height:100vh;min-height:600px;max-width:none;padding:0}
-#pc{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}
+#pc{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair;touch-action:pan-y}
 .hero .lo{position:absolute;left:5vw;bottom:7vh;pointer-events:none}
 .hero .lo b{display:block;font:italic 500 clamp(1.3rem,3vw,2.2rem)/1.2 'Bodoni Moda',serif}
 .hero .lo span{color:var(--mute);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
@@ -81,8 +84,9 @@ h2{font:500 clamp(2.2rem,6vw,4.6rem)/1 'Bodoni Moda',serif;letter-spacing:-.02em
 /* photos + videos */
 .page{padding-top:150px}
 .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:44px 28px;margin-top:50px}
+.vf{perspective:900px}
 .vf small{display:block;color:var(--gold);letter-spacing:.3em;font-size:.72rem;text-transform:uppercase;margin-bottom:12px}
-.vid{aspect-ratio:16/9;background:#000;border:1px solid var(--line);position:relative;display:grid;place-items:center;text-align:center;color:var(--mute);font-size:.8rem;padding:10px}
+.vid{aspect-ratio:16/9;background:#000;border:1px solid var(--line);position:relative;display:grid;place-items:center;text-align:center;color:var(--mute);font-size:.8rem;padding:10px;transition:transform .25s ease-out,box-shadow .25s;transform-style:preserve-3d;box-shadow:0 20px 50px rgba(0,0,0,.5)}
 .vm{padding:18px;line-height:1.6;max-width:44ch}.vm b{color:var(--gold);font-weight:500}
 .vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
 
@@ -95,10 +99,10 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 #music{position:fixed;right:18px;bottom:18px;z-index:40;background:rgba(7,7,11,.7);backdrop-filter:blur(8px);color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:11px 18px;font:500 .72rem Manrope;letter-spacing:.2em;cursor:pointer;text-transform:uppercase}
 #music:hover{background:var(--gold);color:#000}
 .sv{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(8px,2vw,28px);align-items:center;margin-top:40px}
-.fm{height:min(60vh,620px);display:grid;place-items:center;position:relative}
-#si{max-width:100%;max-height:100%;object-fit:contain;cursor:zoom-in;box-shadow:0 40px 100px rgba(0,0,0,.7);animation:sw .6s both}
+.fm{height:min(60vh,620px);display:grid;place-items:center;position:relative;perspective:1200px}
+#si{max-width:100%;max-height:100%;object-fit:contain;cursor:zoom-in;box-shadow:0 40px 100px rgba(0,0,0,.7);animation:sw .8s cubic-bezier(.2,.8,.2,1) backwards;transition:transform .2s ease-out;transform-style:preserve-3d;will-change:transform}
 #si.pt{max-height:min(54vh,540px);max-width:min(100%,400px)}
-@keyframes sw{from{opacity:0;transform:scale(.97)}}
+@keyframes sw{from{opacity:0;transform:rotateY(-70deg) translateZ(-200px) scale(.9)}}
 #sm{position:absolute;color:var(--mute);text-align:center;font-size:.85rem;max-width:30ch;display:none}
 .ar{background:none;border:1px solid var(--line);color:var(--gold);width:54px;height:54px;border-radius:50%;font:300 2rem/1 Manrope;cursor:pointer;transition:.3s}
 .ar:hover{background:var(--gold);color:#000;border-color:var(--gold)}
@@ -113,6 +117,7 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
   *{transition-duration:.01s!important}
   .aur i,.hint,footer .bd{animation:none!important}
   .t p,#enter{animation:none!important;opacity:1!important;filter:none!important;transform:none!important}
+  #si{animation:none!important}
 }
 </style></head><body class="lock">
 
@@ -138,12 +143,12 @@ function enterSite(){
 
 <div class="aur"><i></i><i></i><i></i></div>
 
-<div id="intro"><div class="h h1"></div><div class="h h2"></div><div class="t"><p>Uow SCM </p><p>One Year</p><p>Countless late nights.</p><p>One degree.</p><button id="enter" type="button">ENTER</button></div></div>
+<div id="intro"><div class="h h1"></div><div class="h h2"></div><div class="t"><p>UoW SCM</p><p>One Year</p><p>Countless late nights.</p><p>One degree.</p><button id="enter" type="button">ENTER</button></div></div>
 
 <nav><a class="l" href="#home">UoW SCM Class of 2026</a><div><a href="#home" data-v="home">Home</a><a href="#photos" data-v="photos">Photos</a><a href="#videos" data-v="videos">Videos</a></div></nav>
 
 <main class="view" id="v-home">
-<div class="hero"><canvas id="pc"></canvas><div class="lo"><b>Master of Supply Chain Management</b><span>Saddam Ansari · Abhishek Trivedi · Shivam Singh · Bimala Upadhyaya · Akash Singh</span></div><div class="hint">Move through the gold. Click to scatter.</div></div>
+<div class="hero"><canvas id="pc"></canvas><div class="lo"><b>Master of Supply Chain Management</b><span>Saddam Ansari · Abhishek Trivedi · Shivam Singh · Bimala Upadhyaya · Akash Singh</span></div><div class="hint">Move to rotate in 3D. Click to scatter.</div></div>
 
 <div class="mqw"><div id="mq"></div></div>
 
@@ -154,15 +159,15 @@ function enterSite(){
 <a class="nm" data-i="IMG_2049.jpg"><span>Saddam</span><small>Ansari</small></a>
 <a class="nm" data-i="Insta_Saver_@abhi.k.trivedi_dp_HD.jpg"><span>Abhishek</span><small>Trivedi</small></a>
 <a class="nm" data-i="Insta_Saver_@shivu_17_dp_HD.jpg"><span>Shivam</span><small>Singh</small></a>
-<a class="nm" data-i="WhatsApp Image 2026-10-23 at 21.24.52.jpeg"><span>Bimala</span><small>Upadhyay</small></a>
-<a class="nm" data-i="AKASH_IMAGE.jpg"><span>Akash</span><small>Singh</small></a>
+<a class="nm" data-i="WhatsApp Image 2026-10-23 at 21.24.52.jpeg"><span>Bimala</span><small>Upadhyaya</small></a>
+<a class="nm" data-i="akash & Abhi.jpg"><span>Akash</span><small>Singh</small></a>
 </div></section>
 <img id="fl" alt="">
 
 <section><div class="cta"><a href="#photos"><b>Photos</b>Every frame of the day</a><a href="#videos"><b>Videos</b>Watch it again</a></div></section>
 </main>
 
-<main class="view" id="v-photos"><section class="page"><h2>The ceremony</h2><p class="sub">Photos from graduation day. Tap any photo to enlarge it.</p><div class="sv"><button class="ar" id="pv" aria-label="Previous photo">&#8249;</button><div class="fm"><img id="si" alt=""><p id="sm"></p></div><button class="ar" id="nx" aria-label="Next photo">&#8250;</button></div><div id="ct"></div><div id="th"></div></section></main>
+<main class="view" id="v-photos"><section class="page"><h2>The ceremony</h2><p class="sub">Photos from graduation day. Tap any photo to enlarge it.</p><div class="sv"><button class="ar" id="pv" aria-label="Previous photo">&#8249;</button><div class="fm" id="fm"><img id="si" alt=""><p id="sm"></p></div><button class="ar" id="nx" aria-label="Next photo">&#8250;</button></div><div id="ct"></div><div id="th"></div></section></main>
 
 <main class="view" id="v-videos"><section class="page"><h2>The ceremony, on film</h2><p class="sub">Videos from graduation day.</p><div class="vgrid"></div></section></main>
 
@@ -180,8 +185,7 @@ setTimeout(function(){if(!entered){var b=document.getElementById('enter');b.styl
 </script>
 
 <script>
-const MEDIA={};
-const U=p=>MEDIA[p]||MEDIA['videos/'+p]||encodeURI(p);
+const U=p=>encodeURI(p);
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 
 /* ---- music button ---- */
@@ -199,11 +203,17 @@ function route(){
 }
 addEventListener('hashchange',route);
 
-/* ---- gold particle words ---- */
+/* ---- 3D gold particle words (perspective point cloud) ---- */
 const c=$('#pc'),x=c.getContext('2d'),words=['CONGRATS','2026','SCM','PROUD','SHIVAM','SADDAM','ABHISHEK','BIMALA','AKASH'];
 const N=innerWidth<700?2600:5200;
-let W=0,H=0,P=[],wi=0,mx=-999,my=-999,vis=true;
-for(let i=0;i<N;i++)P.push({x:innerWidth/2,y:innerHeight/2,vx:(Math.random()-.5)*30,vy:(Math.random()-.5)*30,tx:0,ty:0,s:Math.random()*.8+.7,h:35+Math.random()*25,l:60+Math.random()*30,o:Math.random()*6});
+let W=0,H=0,P=[],wi=0,mx=-999,my=-999,vis=true,yaw=0,pitch=0;
+const FOCAL=900;
+for(let i=0;i<N;i++)P.push({
+  x:0,y:0,z:0,
+  vx:(Math.random()-.5)*30,vy:(Math.random()-.5)*30,vz:(Math.random()-.5)*30,
+  tx:0,ty:0,tz:0,
+  s:Math.random()*.8+.7,h:35+Math.random()*25,l:60+Math.random()*30,o:Math.random()*6
+});
 function target(){
   W=c.width=c.clientWidth;H=c.height=c.clientHeight;if(!W)return;
   const o=document.createElement('canvas');o.width=W;o.height=H;
@@ -211,25 +221,60 @@ function target(){
   let fs=Math.min(W/(w.length*.68),H*.46);
   q.font='900 '+fs+'px "Bodoni Moda",Georgia,serif';q.textAlign='center';q.textBaseline='middle';q.fillStyle='#fff';q.fillText(w,W/2,H*.44);
   const d=q.getImageData(0,0,W,H).data,g=Math.max(3,Math.round(W/260)),T=[];
-  for(let yy=0;yy<H;yy+=g)for(let xx=0;xx<W;xx+=g)if(d[(yy*W+xx)*4+3]>128)T.push([xx,yy]);
+  for(let yy=0;yy<H;yy+=g)for(let xx=0;xx<W;xx+=g)if(d[(yy*W+xx)*4+3]>128)T.push([xx-W/2,yy-H/2]);
   for(let i=T.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[T[i],T[j]]=[T[j],T[i]]}
-  P.forEach((p,i)=>{const t=T[i%T.length]||[W/2,H/2];p.tx=t[0]+(Math.random()-.5)*2;p.ty=t[1]+(Math.random()-.5)*2});
+  const depth=fs*.5; /* thickness of the letters */
+  P.forEach((p,i)=>{
+    const t=T[i%T.length]||[0,0];
+    p.tx=t[0]+(Math.random()-.5)*2;
+    p.ty=t[1]+(Math.random()-.5)*2;
+    p.tz=(Math.random()-.5)*depth;
+  });
 }
 function frame(t){
   requestAnimationFrame(frame);
   if(!vis||!W||!$('#v-home').classList.contains('on'))return;
   x.clearRect(0,0,W,H);
+  /* camera rotation follows the pointer, sways gently when idle */
+  const hasPtr=mx>-900;
+  const ty_=hasPtr?((mx/W)-.5)*1.1:Math.sin(t/2200)*.4;
+  const tp_=hasPtr?-((my/H)-.5)*.6:Math.sin(t/3100)*.15;
+  yaw+=(ty_-yaw)*.05;pitch+=(tp_-pitch)*.05;
+  const cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+  const mwx=mx-W/2,mwy=my-H/2,cxm=W/2,cym=H/2;
   for(const p of P){
-    let dx=mx-p.x,dy=my-p.y,d2=dx*dx+dy*dy;
-    if(d2<16000){const f=(1-d2/16000)*3.2,dd=Math.sqrt(d2)||1;p.vx-=dx/dd*f;p.vy-=dy/dd*f}
-    p.vx+=(p.tx-p.x)*.012;p.vy+=(p.ty-p.y)*.012;p.vx*=.9;p.vy*=.9;p.x+=p.vx;p.y+=p.vy;
-    x.fillStyle='hsla('+p.h+',80%,'+(p.l+Math.sin(t/400+p.o)*14)+'%,'+(.65+Math.sin(t/300+p.o)*.3)+')';
-    x.fillRect(p.x,p.y,p.s*2,p.s*2);
+    /* physics in 3D space */
+    if(hasPtr){
+      const dx=mwx-p.x,dy=mwy-p.y,d2=dx*dx+dy*dy;
+      if(d2<16000){const f=(1-d2/16000)*3.2,dd=Math.sqrt(d2)||1;p.vx-=dx/dd*f;p.vy-=dy/dd*f;p.vz+=(Math.random()-.5)*f*2}
+    }
+    p.vx+=(p.tx-p.x)*.012;p.vy+=(p.ty-p.y)*.012;p.vz+=(p.tz-p.z)*.012;
+    p.vx*=.9;p.vy*=.9;p.vz*=.9;
+    p.x+=p.vx;p.y+=p.vy;p.z+=p.vz;
+    /* rotate around Y then X */
+    const x1=p.x*cy+p.z*sy;
+    const z1=-p.x*sy+p.z*cy;
+    const y1=p.y*cp-z1*sp;
+    const z2=p.y*sp+z1*cp;
+    /* perspective projection */
+    const dz=FOCAL+z2;if(dz<60)continue;
+    const sc=FOCAL/dz;
+    const px=cxm+x1*sc,py=cym+y1*sc;
+    if(px<-10||px>W+10||py<-10||py>H+10)continue;
+    const depthShade=Math.max(.25,Math.min(1.25,sc));
+    const light=p.l+Math.sin(t/400+p.o)*14;
+    x.fillStyle='hsla('+p.h+',80%,'+Math.min(92,light*depthShade)+'%,'+Math.min(1,(.65+Math.sin(t/300+p.o)*.3)*depthShade)+')';
+    const s=p.s*2*sc;
+    x.fillRect(px,py,s,s);
   }
 }
 c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
 c.addEventListener('pointerleave',()=>{mx=my=-999});
-c.addEventListener('click',()=>P.forEach(p=>{const a=Math.random()*6.28,v=8+Math.random()*22;p.vx+=Math.cos(a)*v;p.vy+=Math.sin(a)*v}));
+c.addEventListener('click',()=>P.forEach(p=>{
+  /* explode in all three dimensions */
+  const a=Math.random()*6.28,b=Math.random()*3.14-1.57,v=8+Math.random()*22;
+  p.vx+=Math.cos(a)*Math.cos(b)*v;p.vy+=Math.sin(a)*Math.cos(b)*v;p.vz+=Math.sin(b)*v*2;
+}));
 if('IntersectionObserver' in window)new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
 setInterval(()=>{if(!started||!vis)return;wi=(wi+1)%words.length;target()},5200);
 addEventListener('resize',()=>{target();buildRing()});
@@ -247,18 +292,18 @@ let mxp=0,lastY=scrollY,sk=0;
   requestAnimationFrame(m);
 })();
 
-/* ---- 3D ring ---- */
+/* ---- 3D ring (every file below exists in your repo) ---- */
 const items=[
   ['IMG_2049.jpg','Saddam Ansari','S'],
   ['Insta_Saver_@abhi.k.trivedi_dp_HD.jpg','Abhishek Trivedi','A'],
   ['Insta_Saver_@shivu_17_dp_HD.jpg','Shivam Singh','S'],
-  ['WhatsApp Image 2026-10-23 at 21.24.52.jpeg','Bimala Upadhyay','B'],
-  ['AKASH_IMAGE.jpg','Akash Singh','A'],
+  ['WhatsApp Image 2026-10-23 at 21.24.52.jpeg','Bimala Upadhyaya','B'],
+  ['akash & Abhi.jpg','Akash Singh','A'],
   ['IMG_0850.jpg','The big day','1'],
   ['IMG_0808.jpg','Together','2'],
-  ['IMG_0811.jpg','Caps in the air','3'],
+  ['IMG_0816.jpg','Caps in the air','3'],
   ['IMG_0822.jpg','Worth every night','4'],
-  ['IMG_0843.jpg','Class of 2026','5']
+  ['IMG_0847.jpg','Class of 2026','5']
 ];
 const ring=$('#ring'),cap=$('#cap'),stage=$('#stage'),n=items.length,step=360/n;
 let ang=0,vel=.18,drag=false,lx=0,last=-1;
@@ -295,39 +340,42 @@ addEventListener('pointermove',e=>{tx=e.clientX+30;ty=e.clientY-120});
   requestAnimationFrame(f);
 })();
 
-/* ================= YOUR FILES: edit these two lists ================= */
+/* ===== YOUR FILES: names match your GitHub repo exactly ===== */
 const PHOTOS_ALL=[
-  'IMG_0786.jpg','IMG_0795.jpg','IMG_0798.jpg','IMG_0807.jpg','IMG_0808.jpg','IMG_0809.jpg',
-  'IMG_0810.jpg','IMG_0812.jpg','akash & Abhi.jpg',
-  'c14d075c-34e3-4631-b25f-b0718989502b.jpg','IMG_0816.jpg','IMG_0820.jpg','IMG_0821.jpg',
-  'IMG_0822.jpg','IMG_0823.jpg','IMG_0824.jpg','IMG_0825.jpg','IMG_0826.jpg','IMG_0827.jpg',
-  'b46b4c7e-3041-4865-9645-36e4ae18a4f7.JPG','IMG_0847.jpg','IMG_0849.jpg','IMG_0850.jpg'
+  'IMG_0786.jpg','IMG_0795.jpg','IMG_0798.jpg','IMG_0802.jpg',
+  'IMG_0807.jpg','IMG_0808.jpg','IMG_0809.jpg','IMG_0810.jpg',
+  'IMG_0812.jpg','IMG_0813.jpg','IMG_0814.jpg','IMG_0816.jpg',
+  'akash & Abhi.jpg','c14d075c-34e3-4631-b25f-b0718989502b.jpg',
+  'IMG_0820.jpg','IMG_0821.jpg','IMG_0822.jpg','IMG_0823.jpg',
+  'IMG_0824.jpg','IMG_0825.jpg','IMG_0826.jpg','IMG_0827.jpg',
+  'IMG_0847.jpg','IMG_0849.jpg','IMG_0850.jpg'
 ];
 const VIDEOS=[
-  ['Saddam Ansari.mov','Saddam Ansari'],
-  ['Shivam Singh .mp4','Shivam Singh'],
-  ['Abhishek Trivedi.mov','Abhishek Trivedi'],
-  ['Bimala.mov','Bimala Upadhyay'],
+  ['Saddam Ansari.mp4','Saddam Ansari'],
   ['IMG_0787.mp4','Saddam Ansari'],
+  ['Shivam Singh .mp4','Shivam Singh'],
   ['IMG_0796 .mp4','Shivam Singh'],
+  ['Abhishek Trivedi.mp4','Abhishek Trivedi'],
   ['IMG_0797.mp4','Abhishek Trivedi'],
-  ['IMG_0800 .mp4','Bimala Upadhyay'],
+  ['Bimala.mp4','Bimala Upadhyaya'],
+  ['IMG_0800 .mp4','Bimala Upadhyaya'],
   ['IMG_0794 .mp4','Akash Singh'],
   ['IMG_0817.mp4','Ceremony 1'],
   ['IMG_0818.mp4','Ceremony 2'],
   ['IMG_0819.mp4','Ceremony 3'],
   ['IMG_0830.mp4','Ceremony 4']
 ];
-/* ==================================================================== */
+/* ============================================================ */
 
-/* ---- photo viewer ---- */
+/* ---- photo viewer (3D flip-in + cursor tilt) ---- */
 let PHOTOS=PHOTOS_ALL.slice(),cur=0;
-const si=$('#si'),sm=$('#sm'),lb=$('#lb');
+const si=$('#si'),sm=$('#sm'),lb=$('#lb'),fm=$('#fm');
 const renderThumbs=()=>$('#th').innerHTML=PHOTOS.map((f,i)=>'<div data-i="'+i+'"><img src="'+U(f)+'" alt="" onerror="this.parentNode.remove()"></div>').join('');
 function go(i){
   if(!PHOTOS.length)return;
   cur=(i+PHOTOS.length)%PHOTOS.length;
   sm.style.display='none';si.style.display='';
+  si.style.transform='';
   si.style.animation='none';si.offsetWidth;si.style.animation='';
   si.src=U(PHOTOS[cur]);
   $('#ct').textContent=String(cur+1).padStart(2,'0')+' / '+String(PHOTOS.length).padStart(2,'0');
@@ -339,8 +387,16 @@ si.onerror=()=>{
   const bad=PHOTOS[cur];
   PHOTOS=PHOTOS.filter(f=>f!==bad);
   if(PHOTOS.length){renderThumbs();go(cur>=PHOTOS.length?0:cur)}
-  else{si.style.display='none';sm.style.display='block';sm.innerHTML='No photos found.<br>Put them in the same folder as this page.';$('#ct').textContent=''}
+  else{si.style.display='none';sm.style.display='block';sm.innerHTML='No photos found.';$('#ct').textContent=''}
 };
+/* 3D tilt toward the cursor */
+fm.addEventListener('pointermove',e=>{
+  if(e.pointerType==='touch')return;
+  const r=fm.getBoundingClientRect();
+  const px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+  si.style.transform='rotateY('+(px*18)+'deg) rotateX('+(-py*14)+'deg) translateZ(30px)';
+});
+fm.addEventListener('pointerleave',()=>{si.style.transform=''});
 si.onclick=()=>{lb.querySelector('img').src=si.src;lb.style.display='grid'};
 lb.onclick=()=>lb.style.display='none';
 $('#pv').onclick=()=>go(cur-1);
@@ -357,29 +413,37 @@ si.addEventListener('pointerdown',e=>sx=e.clientX);
 si.addEventListener('pointerup',e=>{const d=e.clientX-sx;if(Math.abs(d)>50)go(cur+(d<0?1:-1))});
 renderThumbs();
 
-/* ---- videos ---- */
+/* ---- videos: each one loads its exact filename, with a slight 3D tilt ---- */
 const clean=t=>String(t).replace(/[<>&"]/g,'');
 function renderVideos(l){
-  $('.vgrid').innerHTML=l.map(v=>{
-    const b=v[0].replace(/\.[^.]+$/,'');
-    return '<div class="vf"><small>'+clean(v[1])+'</small><div class="vid">'+
-      '<span class="vm">Loading '+clean(v[0])+'\u2026</span>'+
-      '<video controls playsinline preload="metadata" data-f="'+clean(v[0])+'">'+
-      '<source src="'+U(b+'.mp4')+'" type="video/mp4"><source src="'+U(v[0])+'">'+
-      '</video></div></div>';
-  }).join('');
+  $('.vgrid').innerHTML=l.map(v=>
+    '<div class="vf"><small>'+clean(v[1])+'</small><div class="vid">'+
+    '<span class="vm">Loading '+clean(v[0])+'\u2026</span>'+
+    '<video controls playsinline preload="metadata" data-f="'+clean(v[0])+'" src="'+U(v[0])+'"></video>'+
+    '</div></div>'
+  ).join('');
   $$('.vid video').forEach(vd=>{
-    const m=vd.previousElementSibling,ss=vd.querySelectorAll('source');
+    const m=vd.previousElementSibling;
     const bad=why=>{
       vd.style.display='none';
       m.style.display='';
-      m.innerHTML=why+'<br><br>Fix: convert it to <b>.mp4 (H.264)</b> and save it in this folder as<br><b>'+vd.dataset.f.replace(/\.[^.]+$/,'')+'.mp4</b>';
+      m.innerHTML=why+'<br><br>Check that <b>'+vd.dataset.f+'</b> is uploaded with exactly this name (capitals and spaces count).';
     };
-    ss[ss.length-1].addEventListener('error',()=>bad('Can\u2019t play '+vd.dataset.f+' in this browser, or the file isn\u2019t in this folder.'));
+    vd.addEventListener('error',()=>bad('Can\u2019t load '+vd.dataset.f+'.'));
     vd.addEventListener('loadedmetadata',()=>{
-      if(!vd.videoWidth)bad(vd.dataset.f+' loaded without a picture (usually an iPhone HEVC video).');
+      if(!vd.videoWidth)bad(vd.dataset.f+' loaded without a picture (an iPhone HEVC video). Re-export it as H.264 .mp4.');
       else m.style.display='none';
     });
+  });
+  $$('.vf').forEach(f=>{
+    const v=f.querySelector('.vid');
+    f.addEventListener('pointermove',e=>{
+      if(e.pointerType==='touch')return;
+      const r=f.getBoundingClientRect();
+      const px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+      v.style.transform='rotateY('+(px*8)+'deg) rotateX('+(-py*6)+'deg)';
+    });
+    f.addEventListener('pointerleave',()=>{v.style.transform=''});
   });
 }
 renderVideos(VIDEOS);
