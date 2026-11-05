@@ -77,13 +77,10 @@ h2{font:500 clamp(2.2rem,6vw,4.6rem)/1 'Bodoni Moda',serif;letter-spacing:-.02em
 .cta a:hover{color:#000;border-color:var(--gold)}.cta a:hover::before{transform:none}
 .cta b{display:block;font:500 clamp(2.6rem,7vw,5rem)/1 'Bodoni Moda',serif;font-style:italic}
 
-/* photos */
+/* photos + videos */
 .page{padding-top:150px}
-.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));grid-auto-rows:170px;grid-auto-flow:dense;gap:14px;margin-top:40px}
-.tile{position:relative;overflow:hidden;border:1px solid var(--line);background:#101018;display:grid;place-items:center;color:var(--mute);font-size:.7rem;text-align:center;animation:ti .9s both}@keyframes ti{from{opacity:0;transform:translateY(30px)}}
-.tile:nth-child(5n+1),.tile:nth-child(5n+4){grid-row:span 2}.tile:nth-child(7n+3){grid-column:span 2}
-.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:transform .8s,filter .5s}
-.gal:hover .tile img{filter:grayscale(1) brightness(.5)}.gal .tile:hover img{filter:none;transform:scale(1.07)}
+.tile{position:relative;overflow:hidden;border:1px solid var(--line);background:#101018;display:grid;place-items:center;color:var(--mute);font-size:.7rem;text-align:center}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
 .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:44px 28px;margin-top:50px}
 .vf small{display:block;color:var(--gold);letter-spacing:.3em;font-size:.72rem;text-transform:uppercase;margin-bottom:12px}
 .vid{aspect-ratio:16/9;background:#000;border:1px solid var(--line);position:relative;display:grid;place-items:center;text-align:center;color:var(--mute);font-size:.8rem;padding:10px}
@@ -98,7 +95,6 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 #lb img{max-width:92vw;max-height:90vh}
 #music{position:fixed;right:18px;bottom:18px;z-index:40;background:rgba(7,7,11,.7);backdrop-filter:blur(8px);color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:11px 18px;font:500 .72rem Manrope;letter-spacing:.2em;cursor:pointer;text-transform:uppercase}
 #music:hover{background:var(--gold);color:#000}
-.pick{display:inline-block;margin-top:24px;border:1px solid var(--gold);color:var(--gold);padding:12px 26px;border-radius:99px;font:500 .75rem Manrope;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:.3s}.pick:hover{background:var(--gold);color:#000}.pick input{display:none}.tile span{padding:14px;line-height:1.5}
 .sv{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(8px,2vw,28px);align-items:center;margin-top:40px}
 .fm{height:min(60vh,620px);display:grid;place-items:center;position:relative}
 #si{max-width:100%;max-height:100%;object-fit:contain;cursor:zoom-in;box-shadow:0 40px 100px rgba(0,0,0,.7);animation:sw .6s both}
@@ -115,7 +111,8 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 @media(max-width:700px){.ar{width:40px;height:40px;font-size:1.5rem}}
 ::selection{background:var(--gold);color:#000}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
-</style></head><body class="lock"><script>addEventListener('error',e=>{const d=document.createElement('div');d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:999;background:#b3261e;color:#fff;font:14px/1.4 system-ui;padding:12px 16px';d.textContent='Page error: '+e.message+' (line '+e.lineno+'). Send me this message.';document.body.appendChild(d)});</script>
+</style></head><body class="lock">
+<script>addEventListener('error',e=>{const d=document.createElement('div');d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:999;background:#b3261e;color:#fff;font:14px/1.4 system-ui;padding:12px 16px';d.textContent='Page error: '+e.message+' (line '+e.lineno+'). Send me this message.';document.body.appendChild(d)});</script>
 <div class="aur"><i></i><i></i><i></i></div>
 
 <div id="intro"><div class="h h1"></div><div class="h h2"></div><div class="t"><p>One Year</p><p>Countless late nights.</p><p>One degree.</p><button id="enter">ENTER</button></div></div>
@@ -123,19 +120,20 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 <nav><a class="l" href="#home">UoW SCM Class of 2026</a><div><a href="#home" data-v="home">Home</a><a href="#photos" data-v="photos">Photos</a><a href="#videos" data-v="videos">Videos</a></div></nav>
 
 <main class="view" id="v-home">
-<div class="hero"><canvas id="pc"></canvas><div class="lo"><b>Master of Supply Chain Management</b><span>Saddam · Abhishek · Shivam · Bimala </span></div><div class="hint">Move through the gold. Click to scatter.</div></div>
+<div class="hero"><canvas id="pc"></canvas><div class="lo"><b>Master of Supply Chain Management</b><span>Saddam · Abhishek · Shivam · Bimala · Akash</span></div><div class="hint">Move through the gold. Click to scatter.</div></div>
 
 <div class="mqw"><div id="mq"></div></div>
 
 <section><h2>The graduates</h2><p class="sub">Drag to turn the ring.</p>
 <div class="stage" id="stage"><div id="ring"></div></div><div id="cap">&nbsp;</div></section>
 
-<section><h2>Three names.<br>One class.</h2><div class="names" style="margin-top:40px">
+<section><h2>Five names.<br>One class.</h2><div class="names" style="margin-top:40px">
 <a class="nm" data-i="IMG_2049.jpg"><span>Saddam</span><small>Ansari</small></a>
 <a class="nm" data-i="Insta_Saver_@abhi.k.trivedi_dp_HD.jpg"><span>Abhishek</span><small>Trivedi</small></a>
 <a class="nm" data-i="Insta_Saver_@shivu_17_dp_HD.jpg"><span>Shivam</span><small>Singh</small></a>
-<a class="nm" data-i="WhatsApp Image 2026-10-23 at 21.24.52.jpeg"><span>Bimala</span><small>Upadhyay</small></a></div></section>
-<a class="nm" data-i="WhatsApp Image 2026-10-23 at 21.24.52.jpeg"><span>Akash</span><small>Singh</small></a></div></section>
+<a class="nm" data-i="WhatsApp Image 2026-10-23 at 21.24.52.jpeg"><span>Bimala</span><small>Upadhyay</small></a>
+<a class="nm" data-i="AKASH_IMAGE.jpg"><span>Akash</span><small>Singh</small></a>
+</div></section>
 <img id="fl" alt="">
 
 <section><div class="cta"><a href="#photos"><b>Photos</b>Every frame of the day</a><a href="#videos"><b>Videos</b>Watch it again</a></div></section>
@@ -145,16 +143,17 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 
 <main class="view" id="v-videos"><section class="page"><h2>The ceremony, on film</h2><p class="sub">Videos from graduation day.</p><div class="vgrid"></div></section></main>
 
-<footer><div class="bd">Congratulations</div><p>Saddam · Abhishek · Shivam · Bimala· Akash ~ a degree well earned</p></footer>
+<footer><div class="bd">Congratulations</div><p>Saddam · Abhishek · Shivam · Bimala · Akash ~ a degree well earned</p></footer>
 
 <audio id="bgm" src="aj_kal_zindagi.mp3" loop preload="auto"></audio>
 <button id="music">&#9834; Play music</button>
 <div id="lb"><img alt=""></div>
-<script>const MEDIA={};</script>
+
 <script>
-const U=p=>MEDIA[p]||MEDIA['videos/'+p]||MEDIA['videos/'+p.replace(/\.[^.]+$/,'.mp4')]||encodeURI(p);
+const MEDIA={};
+const U=p=>MEDIA[p]||MEDIA['videos/'+p]||encodeURI(p);
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
-const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let started=0;
 
 /* ---- open + music ---- */
 const bgm=$('#bgm'),mb=$('#music');
@@ -162,124 +161,43 @@ const setM=on=>mb.textContent=on?'\u266A Pause music':'\u266A Play music';
 const play=()=>bgm.play().then(()=>setM(true)).catch(()=>{});
 $('#enter').onclick=()=>{$('#intro').classList.add('open');document.body.classList.remove('lock');play();setTimeout(()=>$('#intro').classList.add('gone'),1500);started=1};
 mb.onclick=()=>{if(bgm.paused)play();else{bgm.pause();setM(false)}};
-let started=0;
 
 /* ---- routing ---- */
 const views=['home','photos','videos'];
-function route(){let h=location.hash.slice(1);if(!views.includes(h))h='home';
-views.forEach(v=>{$('#v-'+v).classList.toggle('on',v===h);$('nav a[data-v="'+v+'"]').classList.toggle('on',v===h)});if(h==='photos')probePhotos();if(h==='videos')probeVideos();scrollTo(0,0);sizeAll()}
+function route(){
+  let h=location.hash.slice(1);if(!views.includes(h))h='home';
+  views.forEach(v=>{$('#v-'+v).classList.toggle('on',v===h);$('nav a[data-v="'+v+'"]').classList.toggle('on',v===h)});
+  scrollTo(0,0);sizeAll();
+}
 addEventListener('hashchange',route);
 
 /* ---- gold particle words ---- */
 const c=$('#pc'),x=c.getContext('2d'),words=['CONGRATS','2026','SCM','PROUD','SHIVAM','SADDAM','ABHISHEK','BIMALA','AKASH'];
-const N=innerWidth<700?2600:5200;let W,H,P=[],wi=0,mx=-999,my=-999,vis=true;
+const N=innerWidth<700?2600:5200;
+let W=0,H=0,P=[],wi=0,mx=-999,my=-999,vis=true;
 for(let i=0;i<N;i++)P.push({x:innerWidth/2,y:innerHeight/2,vx:(Math.random()-.5)*30,vy:(Math.random()-.5)*30,tx:0,ty:0,s:Math.random()*.8+.7,h:35+Math.random()*25,l:60+Math.random()*30,o:Math.random()*6});
-function target(){W=c.width=c.clientWidth;H=c.height=c.clientHeight;if(!W)return;
-const o=document.createElement('canvas');o.width=W;o.height=H;const q=o.getContext('2d'),w=words[wi];
-let fs=Math.min(W/(w.length*.68),H*.46);q.font='900 '+fs+'px "Bodoni Moda",Georgia,serif';q.textAlign='center';q.textBaseline='middle';q.fillStyle='#fff';q.fillText(w,W/2,H*.44);
-const d=q.getImageData(0,0,W,H).data,g=Math.max(3,Math.round(W/260)),T=[];
-for(let yy=0;yy<H;yy+=g)for(let xx=0;xx<W;xx+=g)if(d[(yy*W+xx)*4+3]>128)T.push([xx,yy]);
-for(let i=T.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[T[i],T[j]]=[T[j],T[i]]}
-P.forEach((p,i)=>{const t=T[i%T.length]||[W/2,H/2];p.tx=t[0]+(Math.random()-.5)*2;p.ty=t[1]+(Math.random()-.5)*2})}
-function frame(t){requestAnimationFrame(frame);if(!vis||!W||!$('#v-home').classList.contains('on'))return;
-x.clearRect(0,0,W,H);
-for(const p of P){let dx=mx-p.x,dy=my-p.y,d2=dx*dx+dy*dy;
-if(d2<16000){const f=(1-d2/16000)*3.2,dd=Math.sqrt(d2)||1;p.vx-=dx/dd*f;p.vy-=dy/dd*f}
-p.vx+=(p.tx-p.x)*.012;p.vy+=(p.ty-p.y)*.012;p.vx*=.9;p.vy*=.9;p.x+=p.vx;p.y+=p.vy;
-x.fillStyle='hsla('+p.h+',80%,'+(p.l+Math.sin(t/400+p.o)*14)+'%,'+(.65+Math.sin(t/300+p.o)*.3)+')';x.fillRect(p.x,p.y,p.s*2,p.s*2)}}
+function target(){
+  W=c.width=c.clientWidth;H=c.height=c.clientHeight;if(!W)return;
+  const o=document.createElement('canvas');o.width=W;o.height=H;
+  const q=o.getContext('2d'),w=words[wi];
+  let fs=Math.min(W/(w.length*.68),H*.46);
+  q.font='900 '+fs+'px "Bodoni Moda",Georgia,serif';q.textAlign='center';q.textBaseline='middle';q.fillStyle='#fff';q.fillText(w,W/2,H*.44);
+  const d=q.getImageData(0,0,W,H).data,g=Math.max(3,Math.round(W/260)),T=[];
+  for(let yy=0;yy<H;yy+=g)for(let xx=0;xx<W;xx+=g)if(d[(yy*W+xx)*4+3]>128)T.push([xx,yy]);
+  for(let i=T.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[T[i],T[j]]=[T[j],T[i]]}
+  P.forEach((p,i)=>{const t=T[i%T.length]||[W/2,H/2];p.tx=t[0]+(Math.random()-.5)*2;p.ty=t[1]+(Math.random()-.5)*2});
+}
+function frame(t){
+  requestAnimationFrame(frame);
+  if(!vis||!W||!$('#v-home').classList.contains('on'))return;
+  x.clearRect(0,0,W,H);
+  for(const p of P){
+    let dx=mx-p.x,dy=my-p.y,d2=dx*dx+dy*dy;
+    if(d2<16000){const f=(1-d2/16000)*3.2,dd=Math.sqrt(d2)||1;p.vx-=dx/dd*f;p.vy-=dy/dd*f}
+    p.vx+=(p.tx-p.x)*.012;p.vy+=(p.ty-p.y)*.012;p.vx*=.9;p.vy*=.9;p.x+=p.vx;p.y+=p.vy;
+    x.fillStyle='hsla('+p.h+',80%,'+(p.l+Math.sin(t/400+p.o)*14)+'%,'+(.65+Math.sin(t/300+p.o)*.3)+')';
+    x.fillRect(p.x,p.y,p.s*2,p.s*2);
+  }
+}
 c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
-c.addEventListener('pointerleave',()=>{mx=my=-999});
-c.addEventListener('click',()=>P.forEach(p=>{const a=Math.random()*6.28,v=8+Math.random()*22;p.vx+=Math.cos(a)*v;p.vy+=Math.sin(a)*v}));
-new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
-setInterval(()=>{if(!started||!vis)return;wi=(wi+1)%words.length;target()},5200);
-addEventListener('resize',()=>{target();buildRing()});
-(document.fonts?document.fonts.load('900 100px "Bodoni Moda"'):Promise.resolve()).then(()=>{target();requestAnimationFrame(frame)});
-
-/* ---- velocity marquee ---- */
-const mq=$('#mq');mq.innerHTML=('<span>Master of Supply Chain Management</span><span>Class of 2026</span>').repeat(4);
-let mxp=0,lastY=scrollY,sk=0;
-(function m(){const v=scrollY-lastY;lastY=scrollY;sk+=(v-sk)*.1;mxp-=1.2+Math.abs(sk)*.5;
-if(-mxp>=mq.scrollWidth/2)mxp=0;mq.style.transform='translateX('+mxp+'px) skewX('+(-sk*.4)+'deg)';requestAnimationFrame(m)})();
-
-/* ---- 3D ring ---- */
-const items=[['IMG_2049.jpg','Saddam Ansari','S'],['Insta_Saver_@abhi.k.trivedi_dp_HD.jpg','Abhishek Trivedi','A'],['Insta_Saver_@shivu_17_dp_HD.jpg','Shivam Singh','S'],['WhatsApp Image 2026-10-23 at 21.24.52.jpeg','Bimala Upadhyay','S'],['AKASH_IMAGE.jpg','Akash Singh','A'],['IMG_0850.jpg','The big day','1'],['IMG_0808.jpg','Together','2'],['IMG_0811.jpg','Caps in the air','3'],['IMG_0822.jpg','Worth every night','4'],['IMG_0843.jpg','Class of 2026','5']];const ring=$('#ring'),cap=$('#cap'),stage=$('#stage'),n=items.length,step=360/n;
-let ang=0,vel=.18,drag=false,lx=0,last=-1;
-ring.innerHTML=items.map(i=>'<div class="pn"><b>'+i[2]+'</b><img src="'+U(i[0])+'" alt="'+i[1]+'" onerror="this.remove()"></div>').join('');
-function buildRing(){const pw=ring.offsetWidth,R=pw/2/Math.tan(Math.PI/n)+24;[...ring.children].forEach((p,i)=>p.style.transform='rotateY('+i*step+'deg) translateZ('+R+'px)');ring.dataset.r=R}
-buildRing();
-stage.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX});
-addEventListener('pointerup',()=>drag=false);
-addEventListener('pointermove',e=>{if(!drag)return;vel=(e.clientX-lx)*.35;lx=e.clientX;ang+=vel});
-(function r(){if(!drag){ang+=vel;vel+=(.18-vel)*.02}
-ring.style.transform='translateZ(-'+ring.dataset.r+'px) rotateX(-4deg) rotateY('+ang+'deg)';
-const k=((Math.round(-ang/step)%n)+n)%n;if(k!==last){last=k;cap.style.opacity=0;setTimeout(()=>{cap.textContent=items[k][1];cap.style.opacity=1},150)}
-requestAnimationFrame(r)})();
-
-/* ---- hover image on names ---- */
-const fl=$('#fl');let fx=0,fy=0,tx=0,ty=0;
-fl.onerror=()=>fl.classList.remove('on');
-$$('.nm').forEach(a=>{a.addEventListener('pointerenter',()=>{fl.src=U(a.dataset.i);fl.classList.add('on')});a.addEventListener('pointerleave',()=>fl.classList.remove('on'))});
-addEventListener('pointermove',e=>{tx=e.clientX+30;ty=e.clientY-120});
-(function f(){fx+=(tx-fx)*.12;fy+=(ty-fy)*.12;fl.style.transform='translate('+fx+'px,'+fy+'px) rotate('+((tx-fx)*.15)+'deg)';requestAnimationFrame(f)})();
-
-/* ---- YOUR FILES: edit these two lists to match your ceremony files ---- */
-let PHOTOS=['IMG_0786.jpg','IMG_0795.jpg','IMG_0798.jpg','IMG_0807.jpg','IMG_0808.jpg','IMG_0809.jpg','IMG_0810.jpg','IMG_0811.jpg','IMG_0812.jpg','akash & Abhi.jpg','c14d075c-34e3-4631-b25f-b0718989502b.jpg','IMG_0816.jpg','IMG_0820.jpg','IMG_0821.jpg','IMG_0822.jpg','IMG_0823.jpg','IMG_0824.jpg','IMG_0825.jpg','IMG_0826.jpg','IMG_0827.jpg','b46b4c7e-3041-4865-9645-36e4ae18a4f7.JPG','c14d075c-34e3-4631-b25f-b0718989502b.jpg','IMG_0847.jpg','IMG_0849.jpg','IMG_0850.jpg'];
-/* keep only photos that really exist: embedded in MEDIA, or sitting next to this page */
-const KNOWN=new Set(["IMG_0807.jpg", "IMG_0808.jpg", "IMG_0809.jpg", "IMG_0810.jpg", "IMG_0811.jpg", "IMG_0812.jpg", "IMG_0813.jpg", "IMG_0814.jpg", "IMG_0815.jpg", "IMG_0816.jpg", "IMG_0820.jpg", "IMG_0821.jpg", "IMG_0822.jpg", "IMG_0823.jpg", "IMG_0824.jpg", "IMG_0825.jpg", "IMG_0826.jpg", "IMG_0827.jpg", "IMG_0832.jpg", "IMG_0833.jpg", "IMG_0834.jpg", "IMG_0835.jpg", "IMG_0838.jpg", "IMG_0842.jpg", "IMG_0843.jpg", "IMG_0844.jpg", "IMG_0847.jpg", "IMG_0849.jpg", "IMG_0850.jpg", "abhishek.jpg", "saddam.jpg", "shivam.jpg"]);const ALL_PHOTOS=PHOTOS.slice();PHOTOS=ALL_PHOTOS.filter(f=>KNOWN.has(f));
-(function(){const maybe=ALL_PHOTOS.filter(f=>!KNOWN.has(f)),found=new Set();let left=maybe.length;if(!left)return;
-const fin=()=>{if(--left)return;if(!found.size)return;const keep=PHOTOS[cur];PHOTOS=ALL_PHOTOS.filter(f=>KNOWN.has(f)||found.has(f));renderThumbs();const k=PHOTOS.indexOf(keep);go(k<0?0:k)};
-maybe.forEach(f=>{const im=new Image();im.onload=()=>{found.add(f);fin()};im.onerror=fin;im.src=U(f)})})();
-const VIDEOS = [
-  ['Saddam Ansari.mov', 'Saddam Ansari'],
-  ['Shivam Singh .mp4', 'Shivam Singh'],
-  ['Abhishek Trivedi.mov', 'Abhishek Trivedi'],
-  ['Bimala.mov', 'Bimala Upadhyay'],
-  ['IMG_0787.MOV', 'Saddam Ansari'],
-  ['IMG_0796.MOV', 'Shivam Singh'],
-  ['IMG_0797.MOV', 'Abhishek Trivedi'],
-  ['IMG_0800.MOV', 'Bimala Upadhyay'],
-  ['IMG_0794.MOV', 'Akash Singh'],
-  ['IMG_0817.mp4', 'Ceremony 1'],
-  ['IMG_0818.mp4', 'Ceremony 2'],
-  ['IMG_0819.mp4', 'Ceremony 3'],
-  ['IMG_0830.mp4', 'Ceremony 4'],
-];                                   // <- closing bracket and semicolon
-];const si=$('#si'),sm=$('#sm');let cur=0;
-const renderThumbs=()=>$('#th').innerHTML=PHOTOS.map((f,i)=>'<div data-i="'+i+'"><img src="'+U(f)+'" alt="" onerror="this.remove()"></div>').join('');renderThumbs();
-function go(i){cur=(i+PHOTOS.length)%PHOTOS.length;sm.style.display='none';si.style.display='';si.style.animation='none';si.offsetWidth;si.style.animation='';si.src=U(PHOTOS[cur]);
-$('#ct').textContent=String(cur+1).padStart(2,'0')+' / '+String(PHOTOS.length).padStart(2,'0');
-$$('#th div').forEach((d,k)=>d.classList.toggle('on',k===cur));const t=$('#th .on');t&&t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'})}
-si.onload=()=>si.classList.toggle('pt',si.naturalHeight>si.naturalWidth*1.05);
-si.onerror=()=>{si.style.display='none';sm.style.display='block';sm.innerHTML='Can\u2019t find '+PHOTOS[cur]+'.<br>Put it in the same folder as this page.'};
-si.onclick=()=>{lb.querySelector('img').src=si.src;lb.style.display='grid'};
-$('#pv').onclick=()=>go(cur-1);$('#nx').onclick=()=>go(cur+1);
-$('#th').onclick=e=>{const d=e.target.closest('div[data-i]');d&&go(+d.dataset.i)};
-addEventListener('keydown',e=>{if(!$('#v-photos').classList.contains('on'))return;if(e.key==='ArrowLeft')go(cur-1);if(e.key==='ArrowRight')go(cur+1)});
-let sx=0;si.addEventListener('pointerdown',e=>sx=e.clientX);si.addEventListener('pointerup',e=>{const d=e.clientX-sx;if(Math.abs(d)>50)go(cur+(d<0?1:-1))});
-
-const clean=t=>String(t).replace(/[<>&"]/g,'');
-function renderVideos(l){$('.vgrid').innerHTML=l.map(v=>{const b=v[0].replace(/\.[^.]+$/,'');return '<div class="vf"><small>'+clean(v[1])+'</small><div class="vid"><span class="vm">Loading '+clean(v[0])+'\u2026</span><video controls playsinline preload="metadata" data-f="'+clean(v[0])+'"><source src="'+U(b)+'.mp4"><source src="'+U(v[0])+'"></video></div></div>'}).join('');
-$$('.vid video').forEach(vd=>{const m=vd.previousElementSibling,ss=vd.querySelectorAll('source');
-const bad=why=>{vd.style.display='none';m.innerHTML=why+'<br><br>Fix: convert it to <b>.mp4 (H.264)</b> and save it in this folder as<br><b>'+vd.dataset.f.replace(/\.[^.]+$/,'')+'.mp4</b>'};
-ss[ss.length-1].addEventListener('error',()=>bad('Can\u2019t play '+vd.dataset.f+' in this browser, or the file isn\u2019t in this folder.'));
-vd.addEventListener('loadedmetadata',()=>{if(!vd.videoWidth)bad(vd.dataset.f+' loaded without a picture (usually an iPhone HEVC video).')})})}
-renderVideos(VIDEOS);
-/* finds extra IMG_08xx videos sitting in the same folder, once, when the page is opened */
-const rng=(a,b)=>Array.from({length:b-a+1},(_,i)=>'IMG_0'+(a+i));
-let pDone=1,vDone=1;
-function probePhotos(){if(pDone)return;pDone=1;const cs=[...new Set([...PHOTOS,...rng(780,899).map(b=>b+'.jpg')])];let left=cs.length;const ok=[];
-cs.forEach(f=>{const i=new Image();i.onload=()=>{ok.push(f);fin()};i.onerror=fin;i.src=U(f)});
-function fin(){if(--left)return;if(ok.length){ok.sort();const keep=PHOTOS[cur];PHOTOS=ok;renderThumbs();const k=PHOTOS.indexOf(keep);go(k<0?0:k)}}}
-function probeVideos(){if(vDone)return;vDone=1;const base=f=>f.replace(/\.[^.]+$/,''),nb=VIDEOS.map(v=>base(v[0]));const names=rng(780,860).flatMap(b=>[b+'.mov',b+'.mp4']);let left=names.length;const ok=[];
-names.forEach(f=>{const v=document.createElement('video');v.preload='metadata';v.muted=true;
-const end=g=>{if(v.dataset.d)return;v.dataset.d=1;if(g)ok.push(f);v.removeAttribute('src');v.load();if(!--left)done()};
-v.onloadedmetadata=()=>end(1);v.onerror=()=>end(0);setTimeout(()=>end(0),6000);v.src=U(f)});
-function done(){const seen=new Set(nb),extra=[];ok.sort().forEach(f=>{const b=base(f);if(!seen.has(b)){seen.add(b);extra.push([f,b])}});
-if(extra.length)renderVideos([...VIDEOS,...extra])}}
-
-/* ---- gallery reveal + lightbox ---- */
-function sizeAll(){buildRing();target()}
-const lb=$('#lb');
-document.addEventListener('click',e=>{const i=e.target.closest('.tile img');if(i){lb.querySelector('img').src=i.src;lb.style.display='grid'}});
-go(0);route();
-</script></body></html>
+c.addEventListener('pointerleave',()=>{m
