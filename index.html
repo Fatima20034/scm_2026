@@ -16,17 +16,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 @keyframes dr{to{transform:translate(8vw,6vh) scale(1.2)}}
 
 /* cinematic open */
-#intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;text-align:center;pointer-events:auto}
+#intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;text-align:center;pointer-events:auto;cursor:pointer}
 #intro .h{position:absolute;left:0;right:0;height:50.2%;background:#000;transition:transform 1.4s cubic-bezier(.8,0,.2,1)}
 #intro .h1{top:0}#intro .h2{bottom:0}
 #intro.open .h1{transform:translateY(-101%)}#intro.open .h2{transform:translateY(101%)}
+#intro.open{pointer-events:none}
 #intro.gone{display:none}
-#intro .t{position:relative;z-index:2;transition:opacity .5s}
+#intro .t{position:relative;z-index:2;transition:opacity .5s;padding:0 5vw}
 #intro.open .t{opacity:0}
 .t p{font:italic 500 clamp(1.8rem,6vw,4rem)/1.2 'Bodoni Moda',serif;opacity:0;animation:li 1s forwards}
-.t p:nth-child(1){animation-delay:.4s}.t p:nth-child(2){animation-delay:1.6s}.t p:nth-child(3){animation-delay:2.8s;color:var(--gold)}
+.t p:nth-child(1){animation-delay:.3s}.t p:nth-child(2){animation-delay:.9s}.t p:nth-child(3){animation-delay:1.5s;color:var(--gold)}
 @keyframes li{from{opacity:0;filter:blur(12px);transform:translateY(14px)}to{opacity:1;filter:none;transform:none}}
-#enter{margin-top:46px;background:none;border:1px solid var(--gold);color:var(--gold);padding:14px 38px;border-radius:99px;font:500 .8rem Manrope;letter-spacing:.3em;cursor:pointer;opacity:0;animation:li 1s 4s forwards;transition:.3s}
+#enter{margin-top:46px;background:none;border:1px solid var(--gold);color:var(--gold);padding:14px 38px;border-radius:99px;font:500 .8rem Manrope;letter-spacing:.3em;cursor:pointer;opacity:0;animation:li 1s 1.5s forwards;transition:.3s}
 #enter:hover{background:var(--gold);color:#000}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;mix-blend-mode:difference}
@@ -79,8 +80,6 @@ h2{font:500 clamp(2.2rem,6vw,4.6rem)/1 'Bodoni Moda',serif;letter-spacing:-.02em
 
 /* photos + videos */
 .page{padding-top:150px}
-.tile{position:relative;overflow:hidden;border:1px solid var(--line);background:#101018;display:grid;place-items:center;color:var(--mute);font-size:.7rem;text-align:center}
-.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
 .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:44px 28px;margin-top:50px}
 .vf small{display:block;color:var(--gold);letter-spacing:.3em;font-size:.72rem;text-transform:uppercase;margin-bottom:12px}
 .vid{aspect-ratio:16/9;background:#000;border:1px solid var(--line);position:relative;display:grid;place-items:center;text-align:center;color:var(--mute);font-size:.8rem;padding:10px}
@@ -110,12 +109,36 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 #th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 @media(max-width:700px){.ar{width:40px;height:40px;font-size:1.5rem}}
 ::selection{background:var(--gold);color:#000}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+@media(prefers-reduced-motion:reduce){
+  *{transition-duration:.01s!important}
+  .aur i,.hint,footer .bd{animation:none!important}
+  .t p,#enter{animation:none!important;opacity:1!important;filter:none!important;transform:none!important}
+}
 </style></head><body class="lock">
-<script>addEventListener('error',e=>{const d=document.createElement('div');d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:999;background:#b3261e;color:#fff;font:14px/1.4 system-ui;padding:12px 16px';d.textContent='Page error: '+e.message+' (line '+e.lineno+'). Send me this message.';document.body.appendChild(d)});</script>
+
+<!-- Error bar + intro logic first, so ENTER works even if later code fails -->
+<script>
+addEventListener('error',function(e){
+  var d=document.createElement('div');
+  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:999;background:#b3261e;color:#fff;font:14px/1.4 system-ui;padding:12px 16px';
+  d.textContent='Page error: '+e.message+' (line '+e.lineno+'). Send me this message.';
+  document.body.appendChild(d);
+});
+var started=0,entered=false;
+function enterSite(){
+  if(entered)return;entered=true;started=1;
+  var intro=document.getElementById('intro');
+  intro.classList.add('open');
+  document.body.classList.remove('lock');
+  setTimeout(function(){intro.classList.add('gone')},1500);
+  try{var a=document.getElementById('bgm'),p=a.play();
+    if(p&&p.then)p.then(function(){document.getElementById('music').textContent='\u266A Pause music'}).catch(function(){})}catch(e){}
+}
+</script>
+
 <div class="aur"><i></i><i></i><i></i></div>
 
-<div id="intro"><div class="h h1"></div><div class="h h2"></div><div class="t"><p>One Year</p><p>Countless late nights.</p><p>One degree.</p><button id="enter">ENTER</button></div></div>
+<div id="intro"><div class="h h1"></div><div class="h h2"></div><div class="t"><p>One Year</p><p>Countless late nights.</p><p>One degree.</p><button id="enter" type="button">ENTER</button></div></div>
 
 <nav><a class="l" href="#home">UoW SCM Class of 2026</a><div><a href="#home" data-v="home">Home</a><a href="#photos" data-v="photos">Photos</a><a href="#videos" data-v="videos">Videos</a></div></nav>
 
@@ -150,16 +173,21 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 <div id="lb"><img alt=""></div>
 
 <script>
+/* hook up ENTER right away */
+document.getElementById('enter').addEventListener('click',function(e){e.stopPropagation();enterSite()});
+document.getElementById('intro').addEventListener('click',enterSite);
+setTimeout(function(){if(!entered){var b=document.getElementById('enter');b.style.opacity=1;b.style.animation='none';b.textContent='TAP TO ENTER'}},8000);
+</script>
+
+<script>
 const MEDIA={};
 const U=p=>MEDIA[p]||MEDIA['videos/'+p]||encodeURI(p);
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
-let started=0;
 
-/* ---- open + music ---- */
+/* ---- music button ---- */
 const bgm=$('#bgm'),mb=$('#music');
 const setM=on=>mb.textContent=on?'\u266A Pause music':'\u266A Play music';
 const play=()=>bgm.play().then(()=>setM(true)).catch(()=>{});
-$('#enter').onclick=()=>{$('#intro').classList.add('open');document.body.classList.remove('lock');play();setTimeout(()=>$('#intro').classList.add('gone'),1500);started=1};
 mb.onclick=()=>{if(bgm.paused)play();else{bgm.pause();setM(false)}};
 
 /* ---- routing ---- */
@@ -200,4 +228,164 @@ function frame(t){
   }
 }
 c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
-c.addEventListener('pointerleave',()=>{m
+c.addEventListener('pointerleave',()=>{mx=my=-999});
+c.addEventListener('click',()=>P.forEach(p=>{const a=Math.random()*6.28,v=8+Math.random()*22;p.vx+=Math.cos(a)*v;p.vy+=Math.sin(a)*v}));
+if('IntersectionObserver' in window)new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
+setInterval(()=>{if(!started||!vis)return;wi=(wi+1)%words.length;target()},5200);
+addEventListener('resize',()=>{target();buildRing()});
+const startParticles=()=>{target();requestAnimationFrame(frame)};
+(document.fonts&&document.fonts.load?document.fonts.load('900 100px "Bodoni Moda"'):Promise.resolve()).then(startParticles).catch(startParticles);
+
+/* ---- velocity marquee ---- */
+const mq=$('#mq');
+mq.innerHTML=('<span>Master of Supply Chain Management</span><span>Class of 2026</span>').repeat(4);
+let mxp=0,lastY=scrollY,sk=0;
+(function m(){
+  const v=scrollY-lastY;lastY=scrollY;sk+=(v-sk)*.1;mxp-=1.2+Math.abs(sk)*.5;
+  if(-mxp>=mq.scrollWidth/2)mxp=0;
+  mq.style.transform='translateX('+mxp+'px) skewX('+(-sk*.4)+'deg)';
+  requestAnimationFrame(m);
+})();
+
+/* ---- 3D ring ---- */
+const items=[
+  ['IMG_2049.jpg','Saddam Ansari','S'],
+  ['Insta_Saver_@abhi.k.trivedi_dp_HD.jpg','Abhishek Trivedi','A'],
+  ['Insta_Saver_@shivu_17_dp_HD.jpg','Shivam Singh','S'],
+  ['WhatsApp Image 2026-10-23 at 21.24.52.jpeg','Bimala Upadhyay','B'],
+  ['AKASH_IMAGE.jpg','Akash Singh','A'],
+  ['IMG_0850.jpg','The big day','1'],
+  ['IMG_0808.jpg','Together','2'],
+  ['IMG_0811.jpg','Caps in the air','3'],
+  ['IMG_0822.jpg','Worth every night','4'],
+  ['IMG_0843.jpg','Class of 2026','5']
+];
+const ring=$('#ring'),cap=$('#cap'),stage=$('#stage'),n=items.length,step=360/n;
+let ang=0,vel=.18,drag=false,lx=0,last=-1;
+ring.innerHTML=items.map(i=>'<div class="pn"><b>'+i[2]+'</b><img src="'+U(i[0])+'" alt="'+i[1]+'" onerror="this.remove()"></div>').join('');
+function buildRing(){
+  const pw=ring.offsetWidth;if(!pw)return;
+  const R=pw/2/Math.tan(Math.PI/n)+24;
+  [...ring.children].forEach((p,i)=>p.style.transform='rotateY('+i*step+'deg) translateZ('+R+'px)');
+  ring.dataset.r=R;
+}
+buildRing();
+stage.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX});
+addEventListener('pointerup',()=>drag=false);
+addEventListener('pointermove',e=>{if(!drag)return;vel=(e.clientX-lx)*.35;lx=e.clientX;ang+=vel});
+(function r(){
+  if(!drag){ang+=vel;vel+=(.18-vel)*.02}
+  ring.style.transform='translateZ(-'+(ring.dataset.r||0)+'px) rotateX(-4deg) rotateY('+ang+'deg)';
+  const k=((Math.round(-ang/step)%n)+n)%n;
+  if(k!==last){last=k;cap.style.opacity=0;setTimeout(()=>{cap.textContent=items[k][1];cap.style.opacity=1},150)}
+  requestAnimationFrame(r);
+})();
+
+/* ---- hover image on names ---- */
+const fl=$('#fl');let fx=0,fy=0,tx=0,ty=0;
+fl.onerror=()=>fl.classList.remove('on');
+$$('.nm').forEach(a=>{
+  a.addEventListener('pointerenter',()=>{fl.src=U(a.dataset.i);fl.classList.add('on')});
+  a.addEventListener('pointerleave',()=>fl.classList.remove('on'));
+});
+addEventListener('pointermove',e=>{tx=e.clientX+30;ty=e.clientY-120});
+(function f(){
+  fx+=(tx-fx)*.12;fy+=(ty-fy)*.12;
+  fl.style.transform='translate('+fx+'px,'+fy+'px) rotate('+((tx-fx)*.15)+'deg)';
+  requestAnimationFrame(f);
+})();
+
+/* ================= YOUR FILES: edit these two lists ================= */
+const PHOTOS_ALL=[
+  'IMG_0786.jpg','IMG_0795.jpg','IMG_0798.jpg','IMG_0807.jpg','IMG_0808.jpg','IMG_0809.jpg',
+  'IMG_0810.jpg','IMG_0811.jpg','IMG_0812.jpg','akash & Abhi.jpg',
+  'c14d075c-34e3-4631-b25f-b0718989502b.jpg','IMG_0816.jpg','IMG_0820.jpg','IMG_0821.jpg',
+  'IMG_0822.jpg','IMG_0823.jpg','IMG_0824.jpg','IMG_0825.jpg','IMG_0826.jpg','IMG_0827.jpg',
+  'b46b4c7e-3041-4865-9645-36e4ae18a4f7.JPG','IMG_0847.jpg','IMG_0849.jpg','IMG_0850.jpg'
+];
+const VIDEOS=[
+  ['Saddam Ansari.mov','Saddam Ansari'],
+  ['Shivam Singh .mp4','Shivam Singh'],
+  ['Abhishek Trivedi.mov','Abhishek Trivedi'],
+  ['Bimala.mov','Bimala Upadhyay'],
+  ['IMG_0787.MOV','Saddam Ansari'],
+  ['IMG_0796.MOV','Shivam Singh'],
+  ['IMG_0797.MOV','Abhishek Trivedi'],
+  ['IMG_0800.MOV','Bimala Upadhyay'],
+  ['IMG_0794.MOV','Akash Singh'],
+  ['IMG_0817.mp4','Ceremony 1'],
+  ['IMG_0818.mp4','Ceremony 2'],
+  ['IMG_0819.mp4','Ceremony 3'],
+  ['IMG_0830.mp4','Ceremony 4']
+];
+/* ==================================================================== */
+
+/* ---- photo viewer ---- */
+let PHOTOS=PHOTOS_ALL.slice(),cur=0;
+const si=$('#si'),sm=$('#sm'),lb=$('#lb');
+const renderThumbs=()=>$('#th').innerHTML=PHOTOS.map((f,i)=>'<div data-i="'+i+'"><img src="'+U(f)+'" alt="" onerror="this.parentNode.remove()"></div>').join('');
+function go(i){
+  if(!PHOTOS.length)return;
+  cur=(i+PHOTOS.length)%PHOTOS.length;
+  sm.style.display='none';si.style.display='';
+  si.style.animation='none';si.offsetWidth;si.style.animation='';
+  si.src=U(PHOTOS[cur]);
+  $('#ct').textContent=String(cur+1).padStart(2,'0')+' / '+String(PHOTOS.length).padStart(2,'0');
+  $$('#th div').forEach((d,k)=>d.classList.toggle('on',k===cur));
+  const t=$('#th .on');t&&t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+}
+si.onload=()=>si.classList.toggle('pt',si.naturalHeight>si.naturalWidth*1.05);
+si.onerror=()=>{
+  const bad=PHOTOS[cur];
+  PHOTOS=PHOTOS.filter(f=>f!==bad);
+  if(PHOTOS.length){renderThumbs();go(cur>=PHOTOS.length?0:cur)}
+  else{si.style.display='none';sm.style.display='block';sm.innerHTML='No photos found.<br>Put them in the same folder as this page.';$('#ct').textContent=''}
+};
+si.onclick=()=>{lb.querySelector('img').src=si.src;lb.style.display='grid'};
+lb.onclick=()=>lb.style.display='none';
+$('#pv').onclick=()=>go(cur-1);
+$('#nx').onclick=()=>go(cur+1);
+$('#th').onclick=e=>{const d=e.target.closest('div[data-i]');d&&go(+d.dataset.i)};
+addEventListener('keydown',e=>{
+  if(e.key==='Escape')lb.style.display='none';
+  if(!$('#v-photos').classList.contains('on'))return;
+  if(e.key==='ArrowLeft')go(cur-1);
+  if(e.key==='ArrowRight')go(cur+1);
+});
+let sx=0;
+si.addEventListener('pointerdown',e=>sx=e.clientX);
+si.addEventListener('pointerup',e=>{const d=e.clientX-sx;if(Math.abs(d)>50)go(cur+(d<0?1:-1))});
+renderThumbs();
+
+/* ---- videos ---- */
+const clean=t=>String(t).replace(/[<>&"]/g,'');
+function renderVideos(l){
+  $('.vgrid').innerHTML=l.map(v=>{
+    const b=v[0].replace(/\.[^.]+$/,'');
+    return '<div class="vf"><small>'+clean(v[1])+'</small><div class="vid">'+
+      '<span class="vm">Loading '+clean(v[0])+'\u2026</span>'+
+      '<video controls playsinline preload="metadata" data-f="'+clean(v[0])+'">'+
+      '<source src="'+U(b+'.mp4')+'" type="video/mp4"><source src="'+U(v[0])+'">'+
+      '</video></div></div>';
+  }).join('');
+  $$('.vid video').forEach(vd=>{
+    const m=vd.previousElementSibling,ss=vd.querySelectorAll('source');
+    const bad=why=>{
+      vd.style.display='none';
+      m.style.display='';
+      m.innerHTML=why+'<br><br>Fix: convert it to <b>.mp4 (H.264)</b> and save it in this folder as<br><b>'+vd.dataset.f.replace(/\.[^.]+$/,'')+'.mp4</b>';
+    };
+    ss[ss.length-1].addEventListener('error',()=>bad('Can\u2019t play '+vd.dataset.f+' in this browser, or the file isn\u2019t in this folder.'));
+    vd.addEventListener('loadedmetadata',()=>{
+      if(!vd.videoWidth)bad(vd.dataset.f+' loaded without a picture (usually an iPhone HEVC video).');
+      else m.style.display='none';
+    });
+  });
+}
+renderVideos(VIDEOS);
+
+/* ---- sizing + start ---- */
+function sizeAll(){buildRing();target()}
+go(0);
+route();
+</script></body></html>
