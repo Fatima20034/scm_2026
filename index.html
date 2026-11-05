@@ -229,7 +229,7 @@ const KNOWN=new Set(["IMG_0807.jpg", "IMG_0808.jpg", "IMG_0809.jpg", "IMG_0810.j
 (function(){const maybe=ALL_PHOTOS.filter(f=>!KNOWN.has(f)),found=new Set();let left=maybe.length;if(!left)return;
 const fin=()=>{if(--left)return;if(!found.size)return;const keep=PHOTOS[cur];PHOTOS=ALL_PHOTOS.filter(f=>KNOWN.has(f)||found.has(f));renderThumbs();const k=PHOTOS.indexOf(keep);go(k<0?0:k)};
 maybe.forEach(f=>{const im=new Image();im.onload=()=>{found.add(f);fin()};im.onerror=fin;im.src=U(f)})})();
-const VIDEOS=[['Saddam Ansari.mov','Saddam Ansari'],['Shivam Singh.mov','Shivam Singh'],['Abhishek Trivedi.mov','Abhishek Trivedi'],['Bimala.mov','Bimala Upadhyay'],['IMG_0817.mp4','Ceremony 1'],['IMG_0818.mp4','Ceremony 2'],['IMG_0819.mp4','Ceremony 3'],['IMG_0830.mp4','Ceremony 4']];
+const VIDEOS=[['Saddam Ansari.mov','Saddam Ansari'],['Shivam Singh .mp4','Shivam Singh'],['Abhishek Trivedi.mov','Abhishek Trivedi'],['Bimala.mov','Bimala Upadhyay'],['IMG_0817.mp4','Ceremony 1'],['IMG_0818.mp4','Ceremony 2'],['IMG_0819.mp4','Ceremony 3'],['IMG_0830.mp4','Ceremony 4']];
 const si=$('#si'),sm=$('#sm');let cur=0;
 const renderThumbs=()=>$('#th').innerHTML=PHOTOS.map((f,i)=>'<div data-i="'+i+'"><img src="'+U(f)+'" alt="" onerror="this.remove()"></div>').join('');renderThumbs();
 function go(i){cur=(i+PHOTOS.length)%PHOTOS.length;sm.style.display='none';si.style.display='';si.style.animation='none';si.offsetWidth;si.style.animation='';si.src=U(PHOTOS[cur]);
