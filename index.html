@@ -5,18 +5,15 @@
 <style>
 :root{--bg:#07070b;--fg:#f3efe8;--mute:#8d8a96;--gold:#e6c785;--rose:#ff9ec4;--line:rgba(243,239,232,.14)}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--fg);font:300 1.05rem/1.6 Manrope,system-ui,sans-serif;overflow-x:hidden}
-body.lock{overflow:hidden}
-.bd{font-family:'Bodoni Moda',Georgia,serif}
+body.lock{overflow:hidden;height:100%}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .aur{position:fixed;inset:0;z-index:0;pointer-events:none;filter:blur(90px);opacity:.5}
 .aur i{position:absolute;border-radius:50%;width:46vw;height:46vw;animation:dr 22s ease-in-out infinite alternate}
 .aur i:nth-child(1){background:#3a2a6e;left:-10vw;top:-10vw}.aur i:nth-child(2){background:#6e2f4d;right:-12vw;top:30vh;animation-delay:-8s}.aur i:nth-child(3){background:#6b4f1d;left:25vw;bottom:-25vw;animation-delay:-14s}
 @keyframes dr{to{transform:translate(8vw,6vh) scale(1.2)}}
 
-/* cinematic open */
-#intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;text-align:center;pointer-events:auto;cursor:pointer}
+#intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;text-align:center;cursor:pointer}
 #intro .h{position:absolute;left:0;right:0;height:50.2%;background:#000;transition:transform 1.4s cubic-bezier(.8,0,.2,1)}
 #intro .h1{top:0}#intro .h2{bottom:0}
 #intro.open .h1{transform:translateY(-101%)}#intro.open .h2{transform:translateY(101%)}
@@ -40,16 +37,14 @@ nav div a{margin-left:26px;opacity:.55;transition:.3s}nav div a:hover,nav div a.
 .view{display:none;position:relative;z-index:1}.view.on{display:block}
 section{padding:110px 5vw;max-width:1300px;margin:auto}
 
-/* hero */
-.hero{position:relative;height:100vh;min-height:600px;max-width:none;padding:0}
+.hero{position:relative;height:100vh;height:100svh;min-height:600px;max-width:none;padding:0}
 #pc{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}
-.hero .lo{position:absolute;left:5vw;bottom:7vh;pointer-events:none}
+.hero .lo{position:absolute;left:5vw;right:5vw;bottom:7vh;pointer-events:none}
 .hero .lo b{display:block;font:italic 500 clamp(1.3rem,3vw,2.2rem)/1.2 'Bodoni Moda',serif}
 .hero .lo span{color:var(--mute);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
-.hero .hint{position:absolute;right:5vw;bottom:7vh;color:var(--mute);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;pointer-events:none;animation:pu 2.4s infinite}
+.hero .hint{position:absolute;right:5vw;top:90px;color:var(--mute);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;pointer-events:none;animation:pu 2.4s infinite}
 @keyframes pu{50%{opacity:.3}}
 
-/* velocity marquee */
 .mqw{overflow:hidden;padding:30px 0;border-block:1px solid var(--line);position:relative;z-index:1}
 #mq{display:flex;width:max-content;font:900 clamp(3rem,11vw,9rem)/1 'Bodoni Moda',serif;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(230,199,133,.7);will-change:transform}
 #mq span{padding:0 .5em}#mq span:nth-child(even){color:var(--gold);-webkit-text-stroke:0;font-style:italic;font-weight:500}
@@ -57,16 +52,14 @@ section{padding:110px 5vw;max-width:1300px;margin:auto}
 h2{font:500 clamp(2.2rem,6vw,4.6rem)/1 'Bodoni Moda',serif;letter-spacing:-.02em;margin-bottom:14px}
 .sub{color:var(--mute);max-width:46ch}
 
-/* 3D ring */
 .stage{height:min(78vh,640px);perspective:1500px;display:grid;place-items:center;margin-top:20px;cursor:grab;touch-action:pan-y;--pw:clamp(150px,21vw,250px)}
 .stage:active{cursor:grabbing}
 #ring{position:relative;width:var(--pw);height:calc(var(--pw)*1.38);transform-style:preserve-3d}
-.pn{position:absolute;inset:0;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#2a2233,#0d0c13);border:1px solid rgba(230,199,133,.4);backface-visibility:hidden;display:grid;place-items:center;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.pn{position:absolute;inset:0;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#2a2233,#0d0c13);border:1px solid rgba(230,199,133,.4);backface-visibility:hidden;-webkit-backface-visibility:hidden;display:grid;place-items:center;box-shadow:0 30px 80px rgba(0,0,0,.6)}
 .pn b{font:900 5rem 'Bodoni Moda',serif;color:rgba(230,199,133,.25)}
 .pn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
 #cap{text-align:center;font:italic 500 clamp(1.8rem,5vw,3.4rem) 'Bodoni Moda',serif;min-height:1.3em;margin-top:6px;transition:opacity .3s}
 
-/* names with hover image */
 .nm{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:26px 0;border-top:1px solid var(--line);text-decoration:none;color:var(--fg);transition:.4s;cursor:pointer}
 .nm:last-of-type{border-bottom:1px solid var(--line)}
 .nm span{font:900 clamp(3.2rem,12vw,10rem)/.95 'Bodoni Moda',serif;letter-spacing:-.04em;transition:.5s}
@@ -76,12 +69,11 @@ h2{font:500 clamp(2.2rem,6vw,4.6rem)/1 'Bodoni Moda',serif;letter-spacing:-.02em
 #fl.on{opacity:1}
 
 .cta{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.cta a{border:1px solid var(--line);padding:50px 34px;text-decoration:none;color:var(--fg);position:relative;overflow:hidden;transition:.5s}
+.cta a{border:1px solid var(--line);padding:50px 34px;text-decoration:none;color:var(--fg);position:relative;overflow:hidden;transition:.5s;isolation:isolate}
 .cta a::before{content:"";position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .6s cubic-bezier(.7,0,.2,1);z-index:-1}
 .cta a:hover{color:#000;border-color:var(--gold)}.cta a:hover::before{transform:none}
 .cta b{display:block;font:500 clamp(2.6rem,7vw,5rem)/1 'Bodoni Moda',serif;font-style:italic}
 
-/* photos + videos */
 .page{padding-top:150px}
 .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:44px 28px;margin-top:50px}
 .vf small{display:block;color:var(--gold);letter-spacing:.3em;font-size:.72rem;text-transform:uppercase;margin-bottom:12px}
@@ -90,25 +82,20 @@ h2{font:500 clamp(2.2rem,6vw,4.6rem)/1 'Bodoni Moda',serif;letter-spacing:-.02em
 .vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
 
 footer{position:relative;z-index:1;text-align:center;padding:100px 5vw 140px;border-top:1px solid var(--line)}
-footer .bd{font-weight:900;font-size:clamp(2.8rem,13vw,11rem);line-height:.9;letter-spacing:-.04em;background:linear-gradient(100deg,#8a6a2c 20%,#fff3d1 45%,var(--rose) 55%,#8a6a2c 80%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}
+footer .bd{font:900 clamp(2.8rem,13vw,11rem)/.9 'Bodoni Moda',serif;letter-spacing:-.04em;background:linear-gradient(100deg,#8a6a2c 20%,#fff3d1 45%,var(--rose) 55%,#8a6a2c 80%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}
 @keyframes sh{to{background-position:-250% 0}}
 footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:uppercase;font-size:.8rem}
 #lb{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:80;display:none;place-items:center;cursor:zoom-out}
 #lb img{max-width:92vw;max-height:90vh}
-#music{position:fixed;right:18px;bottom:18px;z-index:40;background:rgba(7,7,11,.7);backdrop-filter:blur(8px);color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:11px 18px;font:500 .72rem Manrope;letter-spacing:.2em;cursor:pointer;text-transform:uppercase}
+#music{position:fixed;right:18px;bottom:18px;z-index:40;background:rgba(7,7,11,.7);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:11px 18px;font:500 .72rem Manrope;letter-spacing:.2em;cursor:pointer;text-transform:uppercase}
 #music:hover{background:var(--gold);color:#000}
 
-/* photo viewer: 3D flip + cursor tilt */
 .sv{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(8px,2vw,28px);align-items:center;margin-top:40px}
-.fm{height:min(60vh,620px);display:grid;place-items:center;position:relative;perspective:1400px}
+.fm{height:min(60vh,620px);display:grid;place-items:center;position:relative;perspective:1400px;min-width:0}
 #tl{display:grid;place-items:center;max-width:100%;transform-style:preserve-3d;transition:transform .25s ease-out;will-change:transform}
-#si{max-width:100%;max-height:min(58vh,600px);object-fit:contain;cursor:zoom-in;box-shadow:0 40px 100px rgba(0,0,0,.7);backface-visibility:hidden}
+#si{max-width:100%;max-height:min(58vh,600px);object-fit:contain;cursor:zoom-in;box-shadow:0 40px 100px rgba(0,0,0,.7);touch-action:pan-y}
 #si.pt{max-height:min(54vh,540px);max-width:min(100%,400px)}
-@keyframes flip{
-  0%{opacity:0;transform:rotateY(var(--fr,90deg)) scale(.88)}
-  55%{opacity:1}
-  100%{opacity:1;transform:rotateY(0) scale(1)}
-}
+@keyframes flip{0%{opacity:0;transform:rotateY(var(--fr,90deg)) scale(.88)}55%{opacity:1}100%{opacity:1;transform:rotateY(0) scale(1)}}
 #sm{position:absolute;color:var(--mute);text-align:center;font-size:.85rem;max-width:30ch;display:none}
 .ar{background:none;border:1px solid var(--line);color:var(--gold);width:54px;height:54px;border-radius:50%;font:300 2rem/1 Manrope;cursor:pointer;transition:.3s}
 .ar:hover{background:var(--gold);color:#000;border-color:var(--gold)}
@@ -117,7 +104,7 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 #th div{flex:0 0 74px;height:74px;border:1px solid var(--line);background:#101018;opacity:.4;cursor:pointer;position:relative;transition:.3s}
 #th div.on{opacity:1;border-color:var(--gold)}#th div:hover{opacity:1}
 #th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-@media(max-width:700px){.ar{width:40px;height:40px;font-size:1.5rem}}
+@media(max-width:700px){.ar{width:40px;height:40px;font-size:1.5rem}.hero .hint{display:none}}
 ::selection{background:var(--gold);color:#000}
 @media(prefers-reduced-motion:reduce){
   *{transition-duration:.01s!important}
@@ -126,9 +113,9 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 }
 </style></head><body class="lock">
 
-<!-- Error bar + intro logic first, so ENTER works even if later code fails -->
 <script>
 addEventListener('error',function(e){
+  if(!e.message)return;
   var d=document.createElement('div');
   d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:999;background:#b3261e;color:#fff;font:14px/1.4 system-ui;padding:12px 16px';
   d.textContent='Page error: '+e.message+' (line '+e.lineno+'). Send me this message.';
@@ -178,12 +165,11 @@ function enterSite(){
 
 <footer><div class="bd">Congratulations</div><p>Saddam Ansari · Abhishek Trivedi · Shivam Singh · Bimala Upadhyaya · Akash Singh ~ a degree well earned</p></footer>
 
-<audio id="bgm" src="aj_kal_zindagi.mp3" loop preload="auto"></audio>
-<button id="music">&#9834; Play music</button>
+<audio id="bgm" src="aj_kal_zindagi.mp3" loop preload="none"></audio>
+<button id="music" type="button">&#9834; Play music</button>
 <div id="lb"><img alt=""></div>
 
 <script>
-/* hook up ENTER right away */
 document.getElementById('enter').addEventListener('click',function(e){e.stopPropagation();enterSite()});
 document.getElementById('intro').addEventListener('click',enterSite);
 setTimeout(function(){if(!entered){var b=document.getElementById('enter');b.style.opacity=1;b.style.animation='none';b.textContent='TAP TO ENTER'}},8000);
@@ -193,29 +179,35 @@ setTimeout(function(){if(!entered){var b=document.getElementById('enter');b.styl
 const U=p=>encodeURI(p);
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const toTop=()=>window.scrollTo({top:0,left:0,behavior:'instant'});
 
-/* ---- music button ---- */
+/* ---- music ---- */
 const bgm=$('#bgm'),mb=$('#music');
 const setM=on=>mb.textContent=on?'\u266A Pause music':'\u266A Play music';
 const play=()=>bgm.play().then(()=>setM(true)).catch(()=>{});
 mb.onclick=()=>{if(bgm.paused)play();else{bgm.pause();setM(false)}};
+bgm.addEventListener('pause',()=>setM(false));
+bgm.addEventListener('play',()=>setM(true));
 
 /* ---- routing ---- */
 const views=['home','photos','videos'];
+let videosBuilt=false;
 function route(){
   let h=location.hash.slice(1);if(!views.includes(h))h='home';
   views.forEach(v=>{$('#v-'+v).classList.toggle('on',v===h);$('nav a[data-v="'+v+'"]').classList.toggle('on',v===h)});
-  scrollTo(0,0);sizeAll();
+  if(h==='videos'&&!videosBuilt){videosBuilt=true;renderVideos(VIDEOS)}
+  if(h!=='videos')$$('.vid video').forEach(v=>v.pause());
+  toTop();sizeAll();
 }
 addEventListener('hashchange',route);
 
-/* ---- gold particle words (turns like a card when the word changes) ---- */
+/* ---- gold particle words ---- */
 const c=$('#pc'),x=c.getContext('2d'),words=['CONGRATS','2026','SCM','PROUD','SHIVAM','SADDAM','ABHISHEK','BIMALA','AKASH'];
 const N=innerWidth<700?2600:5200;
-let W=0,H=0,P=[],wi=0,mx=-999,my=-999,vis=true;
+let W=0,H=0,P=[],wi=0,mx=-999,my=-999,vis=true,lastW=0;
 for(let i=0;i<N;i++)P.push({x:innerWidth/2,y:innerHeight/2,vx:(Math.random()-.5)*30,vy:(Math.random()-.5)*30,tx:0,ty:0,s:Math.random()*.8+.7,h:35+Math.random()*25,l:60+Math.random()*30,o:Math.random()*6});
 function target(){
-  W=c.width=c.clientWidth;H=c.height=c.clientHeight;if(!W)return;
+  W=c.width=c.clientWidth;H=c.height=c.clientHeight;lastW=W;if(!W)return;
   const o=document.createElement('canvas');o.width=W;o.height=H;
   const q=o.getContext('2d'),w=words[wi];
   let fs=Math.min(W/(w.length*.68),H*.46);
@@ -233,8 +225,6 @@ const startFlip=()=>{
 function frame(t){
   requestAnimationFrame(frame);
   if(!vis||!W||!$('#v-home').classList.contains('on'))return;
-
-  /* turn animation: 0 -> edge-on, swap word, edge-on -> 0 */
   if(flipStart){
     const e=(performance.now()-flipStart)/1600;
     if(e<.5){const p=e*2;rot=(Math.PI/2)*p*p*p}
@@ -245,18 +235,14 @@ function frame(t){
     }
     if(e>=1){rot=0;flipStart=0}
   }
-
   x.clearRect(0,0,W,H);
   const cx=W/2,cy=H*.44,cs=Math.cos(rot),sn=Math.sin(rot);
   for(const p of P){
     let dx=mx-p.x,dy=my-p.y,d2=dx*dx+dy*dy;
     if(d2<16000){const f=(1-d2/16000)*3.2,dd=Math.sqrt(d2)||1;p.vx-=dx/dd*f;p.vy-=dy/dd*f}
     p.vx+=(p.tx-p.x)*.012;p.vy+=(p.ty-p.y)*.012;p.vx*=.9;p.vy*=.9;p.x+=p.vx;p.y+=p.vy;
-
-    /* 3D turn around the vertical axis, with a little perspective */
     const ox=p.x-cx,z=ox*sn,k=900/(900+z);
     const px=cx+ox*cs*k,py=cy+(p.y-cy)*k,sz=p.s*2*k;
-
     x.fillStyle='hsla('+p.h+',80%,'+(p.l+Math.sin(t/400+p.o)*14)+'%,'+(.65+Math.sin(t/300+p.o)*.3)+')';
     x.fillRect(px,py,sz,sz);
   }
@@ -265,8 +251,9 @@ c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();mx=e.clie
 c.addEventListener('pointerleave',()=>{mx=my=-999});
 c.addEventListener('click',()=>P.forEach(p=>{const a=Math.random()*6.28,v=8+Math.random()*22;p.vx+=Math.cos(a)*v;p.vy+=Math.sin(a)*v}));
 if('IntersectionObserver' in window)new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
-setInterval(()=>{if(!started||!vis||flipStart)return;startFlip()},5200);
-addEventListener('resize',()=>{target();buildRing()});
+setInterval(()=>{if(!started||!vis||flipStart||!W)return;startFlip()},5200);
+/* only rebuild on real width changes (phone address bars fire resize while scrolling) */
+addEventListener('resize',()=>{if(c.clientWidth!==lastW)target();buildRing()});
 const startParticles=()=>{target();requestAnimationFrame(frame)};
 (document.fonts&&document.fonts.load?document.fonts.load('900 100px "Bodoni Moda"'):Promise.resolve()).then(startParticles).catch(startParticles);
 
@@ -275,7 +262,7 @@ const mq=$('#mq');
 mq.innerHTML=('<span>Master of Supply Chain Management</span><span>Class of 2026</span>').repeat(4);
 let mxp=0,lastY=scrollY,sk=0;
 (function m(){
-  const v=scrollY-lastY;lastY=scrollY;sk+=(v-sk)*.1;mxp-=1.2+Math.abs(sk)*.5;
+  const v=scrollY-lastY;lastY=scrollY;sk+=(Math.max(-60,Math.min(60,v))-sk)*.1;mxp-=1.2+Math.abs(sk)*.5;
   if(-mxp>=mq.scrollWidth/2)mxp=0;
   mq.style.transform='translateX('+mxp+'px) skewX('+(-sk*.4)+'deg)';
   requestAnimationFrame(m);
@@ -303,15 +290,15 @@ function buildRing(){
   [...ring.children].forEach((p,i)=>p.style.transform='rotateY('+i*step+'deg) translateZ('+R+'px)');
   ring.dataset.r=R;
 }
-buildRing();
 stage.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX});
 addEventListener('pointerup',()=>drag=false);
+addEventListener('pointercancel',()=>drag=false);
 addEventListener('pointermove',e=>{if(!drag)return;vel=(e.clientX-lx)*.35;lx=e.clientX;ang+=vel});
 (function r(){
   if(!drag){ang+=vel;vel+=(.18-vel)*.02}
   ring.style.transform='translateZ(-'+(ring.dataset.r||0)+'px) rotateX(-4deg) rotateY('+ang+'deg)';
   const k=((Math.round(-ang/step)%n)+n)%n;
-  if(k!==last){last=k;cap.style.opacity=0;setTimeout(()=>{cap.textContent=items[k][1];cap.style.opacity=1},150)}
+  if(k!==last){last=k;cap.style.opacity=0;setTimeout(()=>{cap.textContent=items[last][1];cap.style.opacity=1},150)}
   requestAnimationFrame(r);
 })();
 
@@ -319,17 +306,18 @@ addEventListener('pointermove',e=>{if(!drag)return;vel=(e.clientX-lx)*.35;lx=e.c
 const fl=$('#fl');let fx=0,fy=0,tx=0,ty=0;
 fl.onerror=()=>fl.classList.remove('on');
 $$('.nm').forEach(a=>{
-  a.addEventListener('pointerenter',()=>{fl.src=U(a.dataset.i);fl.classList.add('on')});
+  a.addEventListener('pointerenter',e=>{if(e.pointerType==='touch')return;fl.src=U(a.dataset.i);fl.classList.add('on')});
   a.addEventListener('pointerleave',()=>fl.classList.remove('on'));
 });
 addEventListener('pointermove',e=>{tx=e.clientX+30;ty=e.clientY-120});
 (function f(){
   fx+=(tx-fx)*.12;fy+=(ty-fy)*.12;
-  fl.style.transform='translate('+fx+'px,'+fy+'px) rotate('+((tx-fx)*.15)+'deg)';
+  const rt=Math.max(-12,Math.min(12,(tx-fx)*.15));
+  fl.style.transform='translate('+fx+'px,'+fy+'px) rotate('+rt+'deg)';
   requestAnimationFrame(f);
 })();
 
-/* ===== YOUR FILES: names match your GitHub repo exactly ===== */
+/* ===== YOUR FILES: names must match your GitHub repo exactly ===== */
 const PHOTOS_ALL=[
   'IMG_0786.jpg','IMG_0795.jpg','IMG_0798.jpg','IMG_0802.jpg',
   'IMG_0807.jpg','IMG_0808.jpg','IMG_0809.jpg','IMG_0810.jpg',
@@ -357,9 +345,14 @@ const VIDEOS=[
 /* ============================================================ */
 
 /* ---- photo viewer ---- */
-let PHOTOS=PHOTOS_ALL.slice(),cur=0,lastDir=1;
+let PHOTOS=PHOTOS_ALL.slice(),cur=0,lastDir=1,swiped=false;
 const si=$('#si'),sm=$('#sm'),lb=$('#lb'),tl=$('#tl'),fm=$('#fm');
-const renderThumbs=()=>$('#th').innerHTML=PHOTOS.map((f,i)=>'<div data-i="'+i+'"><img src="'+U(f)+'" alt="" onerror="this.parentNode.remove()"></div>').join('');
+/* thumbnails keep their index in data-i; broken ones are hidden, never removed, so indexes stay correct */
+const renderThumbs=()=>{
+  $('#th').innerHTML=PHOTOS.map((f,i)=>'<div data-i="'+i+'"><img src="'+U(f)+'" alt="" loading="lazy" decoding="async"></div>').join('');
+  $$('#th img').forEach(im=>im.addEventListener('error',()=>{im.parentNode.style.display='none'}));
+  $$('#th div').forEach(d=>d.classList.toggle('on',+d.dataset.i===cur));
+};
 function go(i,dir){
   if(!PHOTOS.length)return;
   lastDir=dir||(i>=cur?1:-1);
@@ -368,10 +361,9 @@ function go(i,dir){
   tl.style.transform='';
   si.src=U(PHOTOS[cur]);
   $('#ct').textContent=String(cur+1).padStart(2,'0')+' / '+String(PHOTOS.length).padStart(2,'0');
-  $$('#th div').forEach((d,k)=>d.classList.toggle('on',k===cur));
+  $$('#th div').forEach(d=>d.classList.toggle('on',+d.dataset.i===cur));
   const t=$('#th .on');t&&t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
 }
-/* the 3D turn plays once the new photo has loaded */
 si.onload=()=>{
   si.classList.toggle('pt',si.naturalHeight>si.naturalWidth*1.05);
   if(reduce)return;
@@ -382,10 +374,9 @@ si.onload=()=>{
 si.onerror=()=>{
   const bad=PHOTOS[cur];
   PHOTOS=PHOTOS.filter(f=>f!==bad);
-  if(PHOTOS.length){renderThumbs();go(cur>=PHOTOS.length?0:cur)}
-  else{si.style.display='none';sm.style.display='block';sm.innerHTML='No photos found.';$('#ct').textContent=''}
+  if(PHOTOS.length){renderThumbs();go(cur>=PHOTOS.length?0:cur,lastDir)}
+  else{si.style.display='none';sm.style.display='block';sm.textContent='No photos found. Check the file names in PHOTOS_ALL.';$('#ct').textContent=''}
 };
-/* tilt toward the cursor (mouse/pen only, so swiping on phones is untouched) */
 fm.addEventListener('pointermove',e=>{
   if(reduce||e.pointerType==='touch')return;
   const r=fm.getBoundingClientRect();
@@ -393,7 +384,7 @@ fm.addEventListener('pointermove',e=>{
   tl.style.transform='rotateX('+(-py*16).toFixed(2)+'deg) rotateY('+(px*20).toFixed(2)+'deg)';
 });
 fm.addEventListener('pointerleave',()=>{tl.style.transform=''});
-si.onclick=()=>{lb.querySelector('img').src=si.src;lb.style.display='grid'};
+si.onclick=()=>{if(swiped){swiped=false;return}lb.querySelector('img').src=si.src;lb.style.display='grid'};
 lb.onclick=()=>lb.style.display='none';
 $('#pv').onclick=()=>go(cur-1,-1);
 $('#nx').onclick=()=>go(cur+1,1);
@@ -405,11 +396,11 @@ addEventListener('keydown',e=>{
   if(e.key==='ArrowRight')go(cur+1,1);
 });
 let sx=0;
-si.addEventListener('pointerdown',e=>sx=e.clientX);
-si.addEventListener('pointerup',e=>{const d=e.clientX-sx;if(Math.abs(d)>50)go(cur+(d<0?1:-1),d<0?1:-1)});
+si.addEventListener('pointerdown',e=>{sx=e.clientX;swiped=false});
+si.addEventListener('pointerup',e=>{const d=e.clientX-sx;if(Math.abs(d)>50){swiped=true;go(cur+(d<0?1:-1),d<0?1:-1)}});
 renderThumbs();
 
-/* ---- videos: each one loads its exact filename ---- */
+/* ---- videos (built the first time the Videos page opens) ---- */
 const clean=t=>String(t).replace(/[<>&"]/g,'');
 function renderVideos(l){
   $('.vgrid').innerHTML=l.map(v=>
@@ -430,9 +421,12 @@ function renderVideos(l){
       if(!vd.videoWidth)bad(vd.dataset.f+' loaded without a picture (an iPhone HEVC video). Re-export it as H.264 .mp4.');
       else m.style.display='none';
     });
+    vd.addEventListener('play',()=>{
+      $$('.vid video').forEach(o=>{if(o!==vd)o.pause()});
+      if(!bgm.paused)bgm.pause();
+    });
   });
 }
-renderVideos(VIDEOS);
 
 /* ---- sizing + start ---- */
 function sizeAll(){buildRing();target()}
