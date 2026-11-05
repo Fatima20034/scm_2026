@@ -1,486 +1,219 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Saddam · Abhishek · Shivam — Class of 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,900;1,6..96,500&family=Manrope:wght@300;500&display=swap" rel="stylesheet">
+<title>UoW SCM Class of 2026 · prime video</title>
 <style>
-:root{--bg:#050505;--fg:#f3efe8;--mute:#9a917c;--gold:#e6c785;--rose:#ffe3a1;--line:rgba(230,199,133,.2)}
+:root{--bg:#0f171e;--bg2:#1a242f;--blue:#00a8e1;--fg:#fff;--mute:#8197a4;--line:rgba(255,255,255,.12)}
 *{box-sizing:border-box;margin:0}
-body{background:radial-gradient(1200px 700px at 12% -8%,rgba(230,199,133,.20),transparent 60%),radial-gradient(900px 650px at 100% 45%,rgba(184,134,47,.16),transparent 60%),radial-gradient(800px 600px at 0% 100%,rgba(120,80,20,.22),transparent 60%),linear-gradient(165deg,#000 0%,#0e0a04 40%,#1b1306 68%,#000 100%);background-attachment:fixed;background-color:#000;color:var(--fg);font:300 1.05rem/1.6 Manrope,system-ui,sans-serif;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 1rem/1.5 "Amazon Ember",Ember,"Segoe UI",Helvetica,Arial,sans-serif;overflow-x:hidden}
 body.lock{overflow:hidden;height:100%}
-a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
-.aur{position:fixed;inset:0;z-index:0;pointer-events:none;filter:blur(90px);opacity:.5}
-.aur i{position:absolute;border-radius:50%;width:46vw;height:46vw;animation:dr 22s ease-in-out infinite alternate}
-.aur i:nth-child(1){background:#8a6a2c;left:-10vw;top:-10vw}.aur i:nth-child(2){background:#5a3d0c;right:-12vw;top:30vh;animation-delay:-8s}.aur i:nth-child(3){background:#c99a3e;left:25vw;bottom:-25vw;animation-delay:-14s;opacity:.7}
-@keyframes dr{to{transform:translate(8vw,6vh) scale(1.2)}}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.logo{font-weight:700;letter-spacing:-.02em;display:inline-block;position:relative}
+.logo i{font-style:normal;color:var(--blue)}
+.logo::after{content:"";position:absolute;left:8%;right:2%;bottom:-.28em;height:.28em;border-bottom:.1em solid var(--blue);border-radius:0 0 100% 100%/0 0 100% 100%}
 
-#intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;text-align:center;cursor:pointer}
-#intro .h{position:absolute;left:0;right:0;height:50.2%;background:#000;transition:transform 1.4s cubic-bezier(.8,0,.2,1)}
-#intro .h1{top:0}#intro .h2{bottom:0}
-#intro.open .h1{transform:translateY(-101%)}#intro.open .h2{transform:translateY(101%)}
-#intro.open{pointer-events:none}
-#intro.gone{display:none}
-#intro .t{position:relative;z-index:2;transition:opacity .5s;padding:0 5vw}
-#intro.open .t{opacity:0}
-.t p{font:italic 500 clamp(1.8rem,6vw,4rem)/1.2 'Bodoni Moda',serif;opacity:0;animation:li 1s forwards}
-.t p:nth-child(1){animation-delay:.3s}
-.t p:nth-child(2){animation-delay:.9s}
-.t p:nth-child(3){animation-delay:1.5s}
-.t p:nth-child(4){animation-delay:2.1s;color:var(--gold)}
-@keyframes li{from{opacity:0;filter:blur(12px);transform:translateY(14px)}to{opacity:1;filter:none;transform:none}}
-#enter{margin-top:46px;background:none;border:1px solid var(--gold);color:var(--gold);padding:14px 38px;border-radius:99px;font:500 .8rem Manrope;letter-spacing:.3em;cursor:pointer;opacity:0;animation:li 1s 2.4s forwards;transition:.3s}
-#enter:hover{background:var(--gold);color:#000}
+#intro{position:fixed;inset:0;z-index:100;background:#000;display:grid;place-items:center;text-align:center;cursor:pointer;transition:opacity .8s}
+#intro.open{opacity:0;pointer-events:none}#intro.gone{display:none}
+#intro .logo{font-size:clamp(2.6rem,10vw,6rem);opacity:0;animation:in 1.2s .2s forwards}
+#intro p{color:var(--mute);margin-top:30px;opacity:0;animation:in 1s 1.2s forwards}
+#enter{margin-top:34px;background:var(--blue);color:#fff;border:0;border-radius:4px;padding:14px 34px;font:700 1rem inherit;font-family:inherit;cursor:pointer;opacity:0;animation:in 1s 1.8s forwards}
+#enter:hover{background:#33bbe9}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;mix-blend-mode:difference}
-nav a{color:#fff;text-decoration:none;font:500 .75rem Manrope;letter-spacing:.25em;text-transform:uppercase}
-nav .l{font:italic 500 1.3rem 'Bodoni Moda',serif;letter-spacing:0;text-transform:none}
-nav div a{margin-left:26px;opacity:.55;transition:.3s}nav div a:hover,nav div a.on{opacity:1}
-.view{display:none;position:relative;z-index:1}.view.on{display:block}
-section{padding:110px 5vw;max-width:1300px;margin:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;gap:28px;padding:14px 4vw;background:linear-gradient(#0f171e 20%,rgba(15,23,30,0));}
+nav .logo{font-size:1.5rem;margin-right:10px}
+nav a.t{color:#c5d1d9;font-weight:500;padding:4px 0;border-bottom:2px solid transparent}
+nav a.t:hover,nav a.t.on{color:#fff;border-color:#fff}
+nav .pill{margin-left:auto;color:var(--mute);font-size:.85rem}
+.view{display:none}.view.on{display:block}
 
-.hero{position:relative;height:100vh;height:100svh;min-height:600px;max-width:none;padding:0}
-#pc{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}
-.hero .lo{position:absolute;left:5vw;right:5vw;bottom:7vh;pointer-events:none}
-.hero .lo b{display:block;font:italic 500 clamp(1.3rem,3vw,2.2rem)/1.2 'Bodoni Moda',serif}
-.hero .lo span{color:var(--mute);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
-.hero .hint{position:absolute;right:5vw;top:90px;color:var(--mute);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;pointer-events:none;animation:pu 2.4s infinite}
-@keyframes pu{50%{opacity:.3}}
+.hero{position:relative;min-height:86vh;display:flex;align-items:flex-end;padding:120px 4vw 70px;background:#0b1117 url("IMG_0807.jpg") center 20%/cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0f171e 15%,rgba(15,23,30,.55) 55%,rgba(15,23,30,.1)),linear-gradient(0deg,#0f171e 0,transparent 40%)}
+.hero>div{position:relative;max-width:640px}
+.badge{display:inline-flex;gap:8px;align-items:center;color:var(--blue);font-weight:700;margin-bottom:14px}
+.badge b{background:var(--blue);color:#0f171e;border-radius:50%;width:18px;height:18px;display:grid;place-items:center;font-size:.7rem}
+h1{font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.05;font-weight:700;letter-spacing:-.02em}
+.meta{margin:16px 0;color:#c5d1d9;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.meta em{font-style:normal;border:1px solid var(--mute);padding:0 6px;border-radius:3px;font-size:.8rem}
+.desc{color:#dfe7ec;max-width:56ch}
+.cast{color:var(--mute);margin-top:12px;font-size:.9rem}.cast b{color:#c5d1d9;font-weight:500}
+.btns{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.b{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:4px;font-weight:700;cursor:pointer;border:0;font:inherit;font-weight:700}
+.b.p{background:#fff;color:#0f171e}.b.p:hover{background:#dfe7ec}
+.b.s{background:rgba(255,255,255,.18);color:#fff}.b.s:hover{background:rgba(255,255,255,.3)}
 
-.mqw{overflow:hidden;padding:30px 0;border-block:1px solid var(--line);position:relative;z-index:1}
-#mq{display:flex;width:max-content;font:900 clamp(3rem,11vw,9rem)/1 'Bodoni Moda',serif;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(230,199,133,.7);will-change:transform}
-#mq span{padding:0 .5em}#mq span:nth-child(even){color:var(--gold);-webkit-text-stroke:0;font-style:italic;font-weight:500}
+.row{padding:28px 0 6px;position:relative}
+.row h3{font-size:1.35rem;font-weight:700;padding:0 4vw;margin-bottom:12px}
+.row h3 a{color:var(--blue);font-size:.9rem;font-weight:500;margin-left:14px}
+.rail{display:flex;gap:10px;overflow-x:auto;padding:4px 4vw 16px;scroll-snap-type:x proximity;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.card{flex:0 0 auto;scroll-snap-align:start;position:relative;border-radius:6px;overflow:hidden;background:var(--bg2);cursor:pointer;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:scale(1.06);box-shadow:0 0 0 2px #fff,0 16px 40px rgba(0,0,0,.6);z-index:2}
+.card img{display:block;width:100%;height:100%;object-fit:cover}
+.card .cp{position:absolute;left:0;right:0;bottom:0;padding:34px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-weight:700;font-size:.95rem}
+.card .cp small{display:block;font-weight:400;color:#c5d1d9;font-size:.78rem}
+.pos{width:clamp(130px,17vw,190px);aspect-ratio:2/3}
+.wide{width:clamp(220px,26vw,320px);aspect-ratio:16/9}
+.vt{display:grid;place-items:center;background:linear-gradient(135deg,#1b2a38,#0f171e)}
+.vt img{position:absolute;inset:0;object-position:center 25%}.vt span{position:relative;background:rgba(15,23,30,.45);width:48px;height:48px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-size:1.1rem;padding-left:3px}
+.arr{position:absolute;top:50px;bottom:16px;width:4vw;min-width:34px;z-index:5;border:0;background:rgba(15,23,30,.7);color:#fff;font-size:1.8rem;cursor:pointer;opacity:0;transition:.2s}
+.row:hover .arr{opacity:1}.arr.l{left:0}.arr.r{right:0}.arr:hover{background:rgba(0,168,225,.8)}
+@media(hover:none){.arr{display:none}}
 
-h2{font:500 clamp(2.2rem,6vw,4.6rem)/1 'Bodoni Moda',serif;letter-spacing:-.02em;margin-bottom:14px}
-.sub{color:var(--mute);max-width:46ch}
-
-.stage{height:min(78vh,640px);perspective:1500px;display:grid;place-items:center;margin-top:20px;cursor:grab;touch-action:pan-y;--pw:clamp(150px,21vw,250px)}
-.stage:active{cursor:grabbing}
-#ring{position:relative;width:var(--pw);height:calc(var(--pw)*1.38);transform-style:preserve-3d}
-.pn{position:absolute;inset:0;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#2c2411,#0a0905);border:1px solid rgba(230,199,133,.4);backface-visibility:hidden;-webkit-backface-visibility:hidden;display:grid;place-items:center;box-shadow:0 30px 80px rgba(0,0,0,.6)}
-.pn b{font:900 5rem 'Bodoni Moda',serif;color:rgba(230,199,133,.25)}
-.pn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
-#cap{text-align:center;font:italic 500 clamp(1.8rem,5vw,3.4rem) 'Bodoni Moda',serif;min-height:1.3em;margin-top:6px;transition:opacity .3s}
-
-.nm{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:26px 0;border-top:1px solid var(--line);text-decoration:none;color:var(--fg);transition:.4s;cursor:pointer}
-.nm:last-of-type{border-bottom:1px solid var(--line)}
-.nm span{font:900 clamp(3.2rem,12vw,10rem)/.95 'Bodoni Moda',serif;letter-spacing:-.04em;transition:.5s}
-.nm small{font:italic 500 clamp(1.1rem,2.4vw,1.8rem) 'Bodoni Moda',serif;color:var(--gold)}
-.names:hover .nm{opacity:.25}.names .nm:hover{opacity:1}.nm:hover span{transform:translateX(18px);color:var(--gold)}
-#fl{position:fixed;left:0;top:0;width:min(260px,40vw);aspect-ratio:4/5;object-fit:cover;z-index:25;pointer-events:none;opacity:0;border-radius:4px;transition:opacity .3s;box-shadow:0 30px 80px rgba(0,0,0,.7)}
-#fl.on{opacity:1}
-
-.cta{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.cta a{border:1px solid var(--line);padding:50px 34px;text-decoration:none;color:var(--fg);position:relative;overflow:hidden;transition:.5s;isolation:isolate}
-.cta a::before{content:"";position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .6s cubic-bezier(.7,0,.2,1);z-index:-1}
-.cta a:hover{color:#000;border-color:var(--gold)}.cta a:hover::before{transform:none}
-.cta b{display:block;font:500 clamp(2.6rem,7vw,5rem)/1 'Bodoni Moda',serif;font-style:italic}
-
-.page{padding-top:150px}
-.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:44px 28px;margin-top:50px}
-.vf small{display:block;color:var(--gold);letter-spacing:.3em;font-size:.72rem;text-transform:uppercase;margin-bottom:12px}
-.vid{aspect-ratio:16/9;background:#000;border:1px solid var(--line);position:relative;display:grid;place-items:center;text-align:center;color:var(--mute);font-size:.8rem;padding:10px}
-.vm{padding:18px;line-height:1.6;max-width:44ch}.vm b{color:var(--gold);font-weight:500}
+.page{padding:110px 4vw 40px;min-height:80vh}
+.page h2{font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.02em}
+.page .sub{color:var(--mute);margin:6px 0 28px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:12px}
+.pgrid .card{aspect-ratio:4/3;width:auto}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:30px 20px}
+.vf small{display:block;color:var(--blue);font-weight:700;margin-bottom:8px}
+.vid{aspect-ratio:16/9;background:#000;border-radius:6px;overflow:hidden;position:relative;display:grid;place-items:center;text-align:center;color:var(--mute);font-size:.85rem;padding:12px}
 .vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
 
-footer{position:relative;z-index:1;text-align:center;padding:100px 5vw 140px;border-top:1px solid var(--line)}
-footer .bd{font:900 clamp(2.8rem,13vw,11rem)/.9 'Bodoni Moda',serif;letter-spacing:-.04em;background:linear-gradient(100deg,#8a6a2c 20%,#fff3d1 45%,var(--rose) 55%,#8a6a2c 80%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}
-@keyframes sh{to{background-position:-250% 0}}
-footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:uppercase;font-size:.8rem}
-#lb{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:80;display:none;place-items:center;cursor:zoom-out}
-#lb img{max-width:92vw;max-height:90vh}
-#music{position:fixed;right:18px;bottom:18px;z-index:40;background:rgba(5,5,5,.75);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:11px 18px;font:500 .72rem Manrope;letter-spacing:.2em;cursor:pointer;text-transform:uppercase}
-#music:hover{background:var(--gold);color:#000}
+footer{padding:60px 4vw 120px;color:var(--mute);border-top:1px solid var(--line);margin-top:30px;font-size:.9rem}
+footer .logo{font-size:1.6rem;color:#fff;margin-bottom:12px}
+footer b{display:block;color:#fff;font-size:1.3rem;margin-bottom:6px}
 
-.sv{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(8px,2vw,28px);align-items:center;margin-top:40px}
-.fm{height:min(60vh,620px);display:grid;place-items:center;position:relative;perspective:1400px;min-width:0}
-#tl{display:grid;place-items:center;max-width:100%;transform-style:preserve-3d;transition:transform .25s ease-out;will-change:transform}
-#si{max-width:100%;max-height:min(58vh,600px);object-fit:contain;cursor:zoom-in;box-shadow:0 40px 100px rgba(0,0,0,.7);touch-action:pan-y}
-#si.pt{max-height:min(54vh,540px);max-width:min(100%,400px)}
-@keyframes flip{0%{opacity:0;transform:rotateY(var(--fr,90deg)) scale(.88)}55%{opacity:1}100%{opacity:1;transform:rotateY(0) scale(1)}}
-#sm{position:absolute;color:var(--mute);text-align:center;font-size:.85rem;max-width:30ch;display:none}
-.ar{background:none;border:1px solid var(--line);color:var(--gold);width:54px;height:54px;border-radius:50%;font:300 2rem/1 Manrope;cursor:pointer;transition:.3s}
-.ar:hover{background:var(--gold);color:#000;border-color:var(--gold)}
-#ct{text-align:center;margin:26px 0 16px;font:italic 500 1.5rem 'Bodoni Moda',serif;color:var(--gold)}
-#th{display:flex;gap:8px;overflow-x:auto;padding:6px 2px 14px;justify-content:safe center}
-#th div{flex:0 0 74px;height:74px;border:1px solid var(--line);background:#110f09;opacity:.4;cursor:pointer;position:relative;transition:.3s}
-#th div.on{opacity:1;border-color:var(--gold)}#th div:hover{opacity:1}
-#th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-@media(max-width:700px){.ar{width:40px;height:40px;font-size:1.5rem}.hero .hint{display:none}}
-::selection{background:var(--gold);color:#000}
-
-/* ---- black & gold polish ---- */
-:root{--rose:#ffd98a}
-.spot{position:fixed;left:0;top:0;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(230,199,133,.24),rgba(230,199,133,.06) 45%,transparent 68%);z-index:0;pointer-events:none;transition:transform .35s ease-out;mix-blend-mode:screen;transform:translate(-999px,-999px)}
-.grain{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.08;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
-h2,.hero .lo b{background:linear-gradient(100deg,#b8862f 10%,#fff3d1 40%,#e6c785 55%,#b8862f 90%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 8s linear infinite;padding-bottom:.08em}
-.mqw{border-image:linear-gradient(90deg,transparent,var(--gold),transparent) 1;background:linear-gradient(90deg,transparent,rgba(230,199,133,.06),transparent)}
-.nm{border-image:linear-gradient(90deg,var(--gold),transparent 85%) 1}
-.pn{border-color:rgba(230,199,133,.65);box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 46px rgba(230,199,133,.2)}
-.cta a{background:linear-gradient(145deg,rgba(230,199,133,.08),rgba(0,0,0,.4));border-color:rgba(230,199,133,.35)}
-.cta a::before{background:linear-gradient(120deg,#b8862f,#ffe9b0 50%,#e6c785)}
-footer{background:radial-gradient(900px 400px at 50% 100%,rgba(230,199,133,.18),transparent 70%)}
-.rv{opacity:0}
-.rv.in{opacity:1;animation:up .9s cubic-bezier(.2,.7,.2,1) backwards}
-@keyframes up{from{opacity:0;transform:translateY(46px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
-@media(hover:none){.spot{display:none}}
-@media(prefers-reduced-motion:reduce){h2,.hero .lo b{animation:none!important}.rv{opacity:1!important}.rv.in{animation:none!important}.spot{display:none}}
-:root{--mute:#b3aa94}
-.aur{inset:-120px;opacity:.95;background:linear-gradient(125deg,#000,#1a1206,#2e2008,#140d03,#000);background-size:320% 320%;animation:gs 20s ease-in-out infinite}
-@keyframes gs{50%{background-position:100% 100%}}
-.aur i{opacity:.35;animation-duration:18s}
-.aur i:nth-child(1){background:#b8862f}
-.aur i:nth-child(2){background:#e6c785}
-.aur i:nth-child(3){background:#7a5a1c}
-.aur i:nth-child(4){background:#ffe3a1;right:15vw;top:45vh;animation-delay:-4s}
-h2{background:linear-gradient(100deg,#fff 20%,#ffe3a8 55%,var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.1em}
-.cta a{background:rgba(230,199,133,.06);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-.nm{border-color:rgba(230,199,133,.28)}
-.rv{opacity:0;transform:translateY(46px);filter:blur(8px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
-.rv.in{opacity:1;transform:none;filter:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;filter:none}.aur{animation:none}}
-@media(prefers-reduced-motion:reduce){
-  *{transition-duration:.01s!important}
-  .aur i,.hint,footer .bd{animation:none!important}
-  .t p,#enter{animation:none!important;opacity:1!important;filter:none!important;transform:none!important}
-}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:80;display:none;place-items:center}
+#lb.on{display:grid}
+#lb img{max-width:88vw;max-height:86vh;object-fit:contain}
+#lb button{position:absolute;background:rgba(255,255,255,.12);border:0;color:#fff;border-radius:50%;width:48px;height:48px;font-size:1.6rem;cursor:pointer}
+#lb button:hover{background:var(--blue)}
+#lp{left:16px;top:50%}#ln{right:16px;top:50%}#lx{right:16px;top:16px}
+#lc{position:absolute;bottom:18px;color:var(--mute);font-size:.9rem}
+#music{position:fixed;right:16px;bottom:16px;z-index:40;background:rgba(15,23,30,.9);color:#fff;border:1px solid var(--mute);border-radius:99px;padding:10px 18px;font:600 .85rem inherit;font-family:inherit;cursor:pointer}
+#music:hover{border-color:var(--blue);color:var(--blue)}
+@media(max-width:700px){nav{gap:16px}nav .pill{display:none}.hero{min-height:78vh}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
 </style></head><body class="lock">
 
-<script>
-addEventListener('error',function(e){
-  if(!e.message)return;
-  var d=document.createElement('div');
-  d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:999;background:#b3261e;color:#fff;font:14px/1.4 system-ui;padding:12px 16px';
-  d.textContent='Page error: '+e.message+' (line '+e.lineno+'). Send me this message.';
-  document.body.appendChild(d);
-});
-var started=0,entered=false;
-function enterSite(){
-  if(entered)return;entered=true;started=1;
-  var intro=document.getElementById('intro');
-  intro.classList.add('open');
-  document.body.classList.remove('lock');
-  setTimeout(function(){intro.classList.add('gone')},1500);
-  
-  try{var a=document.getElementById('bgm'),p=a.play();
-    if(p&&p.then)p.then(function(){document.getElementById('music').textContent='\u266A Pause music'}).catch(function(){})}catch(e){}
-}
-</script>
+<div id="intro"><div><div class="logo">UoW SCM <i>PRIME</i></div><p>The Class of 2026. Now streaming.</p><button id="enter" type="button">Start watching</button></div></div>
 
-<div class="aur"><i></i><i></i><i></i><i></i></div><div class="spot" id="spot"></div><div class="grain"></div>
-
-<div id="intro"><div class="h h1"></div><div class="h h2"></div><div class="t"><p>UoW SCM</p><p>One Year</p><p>Countless late nights.</p><p>One degree.</p><button id="enter" type="button">ENTER</button></div></div>
-
-<nav><a class="l" href="#home">UOW SCM CLASS OF 2026</a><div><a href="#home" data-v="home">Home</a><a href="#photos" data-v="photos">Photos</a><a href="#videos" data-v="videos">Videos</a></div></nav>
+<nav><a class="logo" href="#home">UoW SCM <i>PRIME</i></a><a class="t" href="#home" data-v="home">Home</a><a class="t" href="#photos" data-v="photos">Photos</a><a class="t" href="#videos" data-v="videos">Videos</a><span class="pill">Class of 2026</span></nav>
 
 <main class="view" id="v-home">
-<div class="hero"><canvas id="pc"></canvas><div class="lo"><b>MASTER OF SUPPLY CHAIN MANAGEMENT</b><span>Saddam Ansari · Abhishek Trivedi · Shivam Singh · Bimala Upadhyaya · Akash Singh</span></div><div class="hint">Move through the gold. Click to scatter.</div></div>
+<div class="hero"><div>
+<div class="badge"><b>&#10003;</b>Included with Prime</div>
+<h1>Master of Supply Chain Management</h1>
+<div class="meta"><span>2026</span><span>4 Season</span><em>HD</em><em>UoW</em><span>Drama · Feel-good · True story</span></div>
+<p class="desc">One year. Countless late nights. Five graduates walk the stage and finish what they started. Watch the ceremony, relive the photos and see the moments that made it worth it.</p>
+<p class="cast"><b>Starring</b> Saddam Ansari, Abhishek Trivedi, Shivam Singh, Bimala Upadhyaya, Akash Singh</p>
+<div class="btns"><a class="b p" href="#videos">&#9654; Watch now</a><a class="b s" href="#photos">+ View photos</a></div>
+</div></div>
 
-<div class="mqw"><div id="mq"></div></div>
-
-<section><h2>THE GRADUATES</h2><p class="sub">Drag to turn the ring.</p>
-<div class="stage" id="stage"><div id="ring"></div></div><div id="cap">&nbsp;</div></section>
-
-<section><h2>Five names.<br>One class.</h2><div class="names" style="margin-top:40px">
-<a class="nm" data-i="IMG_2049.jpg"><span>SADDAM</span><small>ANSARI</small></a>
-<a class="nm" data-i="Insta_Saver_@abhi.k.trivedi_dp_HD.jpg"><span>ABHISHEK</span><small>TRIVEDI</small></a>
-<a class="nm" data-i="Insta_Saver_@shivu_17_dp_HD.jpg"><span>SHIVAM</span><small>SINGH</small></a>
-<a class="nm" data-i="WhatsApp Image 2026-10-23 at 21.24.52.jpeg"><span>BIMALA</span><small>UPADHYAYA</small></a>
-<a class="nm" data-i="akash & Abhi.jpg"><span>AKASH </span><small>SINGH</small></a>
-</div></section>
-<img id="fl" alt="">
-
-<section><div class="cta"><a href="#photos"><b>PHOTOS</b>Every frame of the day</a><a href="#videos"><b>Videos</b>Watch it again</a></div></section>
+<div class="row"><h3>Cast &amp; crew</h3><button class="arr l" aria-label="Scroll left">&#8249;</button><div class="rail" id="r-cast"></div><button class="arr r" aria-label="Scroll right">&#8250;</button></div>
+<div class="row"><h3>Photos from the ceremony<a href="#photos">See all</a></h3><button class="arr l" aria-label="Scroll left">&#8249;</button><div class="rail" id="r-photos"></div><button class="arr r" aria-label="Scroll right">&#8250;</button></div>
+<div class="row"><h3>Episodes<a href="#videos">See all</a></h3><button class="arr l" aria-label="Scroll left">&#8249;</button><div class="rail" id="r-vids"></div><button class="arr r" aria-label="Scroll right">&#8250;</button></div>
 </main>
 
-<main class="view" id="v-photos"><section class="page"><h2>THE CEREMONY</h2><p class="sub">Photos from graduation day.</p><div class="sv"><button class="ar" id="pv" aria-label="Previous photo">&#8249;</button><div class="fm" id="fm"><div id="tl"><img id="si" alt=""></div><p id="sm"></p></div><button class="ar" id="nx" aria-label="Next photo">&#8250;</button></div><div id="ct"></div><div id="th"></div></section></main>
+<main class="view" id="v-photos"><div class="page"><h2>Photos</h2><p class="sub">Graduation day. Select a photo to enlarge it.</p><div class="pgrid" id="pg"></div></div></main>
+<main class="view" id="v-videos"><div class="page"><h2>Videos</h2><p class="sub">Season 1 · Graduation day.</p><div class="vgrid"></div></div></main>
 
-<main class="view" id="v-videos"><section class="page"><h2>The Ceremony, Moments in Motion.</h2><p class="sub">Videos from graduation day.</p><div class="vgrid"></div></section></main>
-
-<footer><div class="bd">Congratulations</div><p>Saddam Ansari · Abhishek Trivedi · Shivam Singh · Bimala Upadhyaya · Akash Singh ~ a degree well earned</p></footer>
+<footer><div class="logo">UoW SCM<i>PRIME</i></div><b>Congratulations, Class of 2026</b>Saddam Ansari · Abhishek Trivedi · Shivam Singh · Bimala Upadhyaya · Akash Singh. A degree well earned.</footer>
 
 <audio id="bgm" src="aj_kal_zindagi.mp3" loop preload="none"></audio>
 <button id="music" type="button">&#9834; Play music</button>
-<div id="lb"><img alt=""></div>
+<div id="lb"><button id="lx" aria-label="Close">&times;</button><button id="lp" aria-label="Previous">&#8249;</button><img alt=""><button id="ln" aria-label="Next">&#8250;</button><div id="lc"></div></div>
 
 <script>
-document.getElementById('enter').addEventListener('click',function(e){e.stopPropagation();enterSite()});
-document.getElementById('intro').addEventListener('click',enterSite);
-setTimeout(function(){if(!entered){var b=document.getElementById('enter');b.style.opacity=1;b.style.animation='none';b.textContent='TAP TO ENTER'}},8000);
-</script>
-
-<script>
-const U=p=>encodeURI(p);
-const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
-const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-const toTop=()=>window.scrollTo({top:0,left:0,behavior:'instant'});
-
-/* ---- music ---- */
-const bgm=$('#bgm'),mb=$('#music');
-const setM=on=>mb.textContent=on?'\u266A Pause music':'\u266A Play music';
-const play=()=>bgm.play().then(()=>setM(true)).catch(()=>{});
-mb.onclick=()=>{if(bgm.paused)play();else{bgm.pause();setM(false)}};
-bgm.addEventListener('pause',()=>setM(false));
-bgm.addEventListener('play',()=>setM(true));
-
-/* ---- routing ---- */
-const views=['home','photos','videos'];
-let videosBuilt=false;
-function route(){
-  let h=location.hash.slice(1);if(!views.includes(h))h='home';
-  views.forEach(v=>{$('#v-'+v).classList.toggle('on',v===h);$('nav a[data-v="'+v+'"]').classList.toggle('on',v===h)});
-  if(h==='videos'&&!videosBuilt){videosBuilt=true;renderVideos(VIDEOS)}
-  if(h!=='videos')$$('.vid video').forEach(v=>v.pause());
-  toTop();sizeAll();
-}
-addEventListener('hashchange',route);
-
-/* ---- gold particle words ---- */
-const c=$('#pc'),x=c.getContext('2d'),words=['CONGRATS','2026','SCM','PROUD','SHIVAM','SADDAM','ABHISHEK','BIMALA','AKASH'];
-const N=innerWidth<700?2600:5200;
-let W=0,H=0,P=[],wi=0,mx=-999,my=-999,vis=true,lastW=0;
-for(let i=0;i<N;i++)P.push({x:innerWidth/2,y:innerHeight/2,vx:(Math.random()-.5)*30,vy:(Math.random()-.5)*30,tx:0,ty:0,s:Math.random()*.8+.7,h:38+Math.random()*16,l:58+Math.random()*28,o:Math.random()*6,w:Math.random()<.3});
-function target(){
-  W=c.width=c.clientWidth;H=c.height=c.clientHeight;lastW=W;if(!W)return;
-  const o=document.createElement('canvas');o.width=W;o.height=H;
-  const q=o.getContext('2d'),w=words[wi];
-  const FF='"Bodoni Moda",Georgia,serif';
-  q.font='900 100px '+FF;
-  const wpx=q.measureText(w).width||100*w.length*.8;
-  /* fit the real measured width inside 86% of the canvas, and cap by height */
-  const fs=Math.min(100*(W*.86)/wpx,H*.46);
-  q.font='900 '+fs+'px '+FF;q.textAlign='center';q.textBaseline='middle';
-  q.fillStyle='#fff';q.strokeStyle='#fff';q.lineJoin='round';q.lineWidth=Math.max(2,fs*.03);
-  q.fillText(w,W/2,H*.44);q.strokeText(w,W/2,H*.44);
-  const d=q.getImageData(0,0,W,H).data,T=[];
-  /* start fine, coarsen only until the point count roughly matches the particle count */
-  let g=2;
-  for(;g<40;g++){
-    T.length=0;
-    for(let yy=0;yy<H;yy+=g)for(let xx=0;xx<W;xx+=g)if(d[(yy*W+xx)*4+3]>60)T.push([xx,yy]);
-    if(T.length<=N*1.3)break;
-  }
-  for(let i=T.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[T[i],T[j]]=[T[j],T[i]]}
-  P.forEach((p,i)=>{const t=T[i%T.length]||[W/2,H/2];p.tx=t[0]+(Math.random()-.5)*2;p.ty=t[1]+(Math.random()-.5)*2});
-}
-let rot=0,flipStart=0,swapped=true;
-const startFlip=()=>{
-  if(reduce){wi=(wi+1)%words.length;target();return}
-  flipStart=performance.now();swapped=false;
-};
-function frame(t){
-  requestAnimationFrame(frame);
-  if(!vis||!W||!$('#v-home').classList.contains('on'))return;
-  if(flipStart){
-    const e=(performance.now()-flipStart)/1600;
-    if(e<.5){const p=e*2;rot=(Math.PI/2)*p*p*p}
-    else{
-      if(!swapped){swapped=true;wi=(wi+1)%words.length;target()}
-      const p=Math.min((e-.5)*2,1);
-      rot=-(Math.PI/2)*Math.pow(1-p,3);
-    }
-    if(e>=1){rot=0;flipStart=0}
-  }
-  x.clearRect(0,0,W,H);x.globalCompositeOperation='lighter';
-  const cx=W/2,cy=H*.44,cs=Math.cos(rot),sn=Math.sin(rot);
-  for(const p of P){
-    let dx=mx-p.x,dy=my-p.y,d2=dx*dx+dy*dy;
-    if(d2<16000){const f=(1-d2/16000)*3.2,dd=Math.sqrt(d2)||1;p.vx-=dx/dd*f;p.vy-=dy/dd*f}
-    p.vx+=(p.tx-p.x)*.012;p.vy+=(p.ty-p.y)*.012;p.vx*=.9;p.vy*=.9;p.x+=p.vx;p.y+=p.vy;
-    const ox=p.x-cx,z=ox*sn,k=900/(900+z);
-    const px=cx+ox*cs*k,py=cy+(p.y-cy)*k,sz=p.s*2*k;
-    const tw=Math.sin(t/400+p.o),al=.65+Math.sin(t/300+p.o)*.3;x.fillStyle=p.w?'hsla(40,25%,'+(88+tw*10)+'%,'+al+')':'hsla('+p.h+',78%,'+(p.l+tw*14)+'%,'+al+')';
-    x.fillRect(px,py,sz,sz);
-  }
-}
-c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
-c.addEventListener('pointerleave',()=>{mx=my=-999});
-c.addEventListener('click',()=>P.forEach(p=>{const a=Math.random()*6.28,v=8+Math.random()*22;p.vx+=Math.cos(a)*v;p.vy+=Math.sin(a)*v}));
-if('IntersectionObserver' in window)new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
-setInterval(()=>{if(!started||!vis||flipStart||!W)return;startFlip()},5200);
-/* only rebuild on real width changes (phone address bars fire resize while scrolling) */
-addEventListener('resize',()=>{if(c.clientWidth!==lastW)target();buildRing()});
-const startParticles=()=>{target();requestAnimationFrame(frame)};
-(document.fonts&&document.fonts.load?document.fonts.load('900 100px "Bodoni Moda"'):Promise.resolve()).then(startParticles).catch(startParticles);
-
-/* ---- velocity marquee ---- */
-const mq=$('#mq');
-mq.innerHTML=('<span>Master of Supply Chain Management</span><span>Class of 2026</span>').repeat(4);
-let mxp=0,lastY=scrollY,sk=0;
-(function m(){
-  const v=scrollY-lastY;lastY=scrollY;sk+=(Math.max(-60,Math.min(60,v))-sk)*.1;mxp-=1.2+Math.abs(sk)*.5;
-  if(-mxp>=mq.scrollWidth/2)mxp=0;
-  mq.style.transform='translateX('+mxp+'px) skewX('+(-sk*.4)+'deg)';
-  requestAnimationFrame(m);
-})();
-
-/* ---- 3D ring ---- */
-const items=[
-  ['IMG_2049.jpg','Saddam Ansari','S'],
-  ['Insta_Saver_@abhi.k.trivedi_dp_HD.jpg','Abhishek Trivedi','A'],
-  ['Insta_Saver_@shivu_17_dp_HD.jpg','Shivam Singh','S'],
-  ['WhatsApp Image 2026-10-23 at 21.24.52.jpeg','Bimala Upadhyaya','B'],
-  ['akash & Abhi.jpg','Akash Singh','A'],
-  ['IMG_0850.jpg','The big day','1'],
-  ['IMG_0808.jpg','Together','2'],
-  ['IMG_0816.jpg','Caps in the air','3'],
-  ['IMG_0822.jpg','Worth every night','4'],
-  ['IMG_0847.jpg','Class of 2026','5']
-];
-const ring=$('#ring'),cap=$('#cap'),stage=$('#stage'),n=items.length,step=360/n;
-let ang=0,vel=.18,drag=false,lx=0,last=-1;
-ring.innerHTML=items.map(i=>'<div class="pn"><b>'+i[2]+'</b><img src="'+U(i[0])+'" alt="'+i[1]+'" onerror="this.remove()"></div>').join('');
-function buildRing(){
-  const pw=ring.offsetWidth;if(!pw)return;
-  const R=pw/2/Math.tan(Math.PI/n)+24;
-  [...ring.children].forEach((p,i)=>p.style.transform='rotateY('+i*step+'deg) translateZ('+R+'px)');
-  ring.dataset.r=R;
-}
-stage.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX});
-addEventListener('pointerup',()=>drag=false);
-addEventListener('pointercancel',()=>drag=false);
-addEventListener('pointermove',e=>{if(!drag)return;vel=(e.clientX-lx)*.35;lx=e.clientX;ang+=vel});
-(function r(){
-  if(!drag){ang+=vel;vel+=(.18-vel)*.02}
-  ring.style.transform='translateZ(-'+(ring.dataset.r||0)+'px) rotateX(-4deg) rotateY('+ang+'deg)';
-  const k=((Math.round(-ang/step)%n)+n)%n;
-  if(k!==last){last=k;cap.style.opacity=0;setTimeout(()=>{cap.textContent=items[last][1];cap.style.opacity=1},150)}
-  requestAnimationFrame(r);
-})();
-
-/* ---- hover image on names ---- */
-const fl=$('#fl');let fx=0,fy=0,tx=0,ty=0;
-fl.onerror=()=>fl.classList.remove('on');
-$$('.nm').forEach(a=>{
-  a.addEventListener('pointerenter',e=>{if(e.pointerType==='touch')return;fl.src=U(a.dataset.i);fl.classList.add('on')});
-  a.addEventListener('pointerleave',()=>fl.classList.remove('on'));
-});
-const spot=$('#spot');
-addEventListener('pointermove',e=>{tx=e.clientX+30;ty=e.clientY-120;if(spot)spot.style.transform='translate('+(e.clientX-320)+'px,'+(e.clientY-320)+'px)'});
-(function f(){
-  fx+=(tx-fx)*.12;fy+=(ty-fy)*.12;
-  const rt=Math.max(-12,Math.min(12,(tx-fx)*.15));
-  fl.style.transform='translate('+fx+'px,'+fy+'px) rotate('+rt+'deg)';
-  requestAnimationFrame(f);
-})();
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s),U=encodeURI;
 
 /* ===== YOUR FILES: names must match your GitHub repo exactly ===== */
-const PHOTOS_ALL=[
+const CAST=[
+  ['IMG_2049.jpg','Saddam Ansari'],
+  ['Insta_Saver_@abhi.k.trivedi_dp_HD.jpg','Abhishek Trivedi'],
+  ['Insta_Saver_@shivu_17_dp_HD.jpg','Shivam Singh'],
+  ['WhatsApp Image 2026-10-23 at 21.24.52.jpeg','Bimala Upadhyaya'],
+  ['akash & Abhi.jpg','Akash Singh']
+];
+const PHOTOS=[
   'IMG_0786.jpg','IMG_0795.jpg','IMG_0798.jpg','IMG_0802.jpg',
   'IMG_0807.jpg','IMG_0808.jpg','IMG_0809.jpg','IMG_0810.jpg',
   'IMG_0812.jpg','IMG_1407.JPG','WhatsApp Image 2026-10-23 at 21.24.52.jpeg','IMG_0816.jpg',
   'akash & Abhi.jpg','c14d075c-34e3-4631-b25f-b0718989502b.jpg',
   'IMG_0820.jpg','IMG_0821.jpg','IMG_0822.jpg','IMG_0823.jpg',
   'IMG_0824.jpg','IMG_0825.jpg','IMG_0826.jpg','IMG_0827.jpg',
-  'IMG_0847.jpg','IMG_0849.jpg','IMG_0850.jpg'
+  'IMG_0847.jpg','IMG_0850.jpg'
 ];
 const VIDEOS=[
-  ['Saddam Ansari.mp4','Saddam Ansari'],
-  ['IMG_0787.mp4','Saddam Ansari'],
-  ['Shivam Singh .mp4','Shivam Singh'],
-  ['IMG_0796 .mp4','Shivam Singh'],
-  ['Abhishek Trivedi.mp4','Abhishek Trivedi'],
-  ['IMG_0797.mp4','Abhishek Trivedi'],
-  ['Bimala.mp4','Bimala Upadhyaya'],
-  ['IMG_0800 .mp4','Bimala Upadhyaya'],
+  ['Saddam Ansari.mp4','Saddam Ansari'],['IMG_0787.mp4','Saddam Ansari'],
+  ['Shivam Singh .mp4','Shivam Singh'],['IMG_0796 .mp4','Shivam Singh'],
+  ['Abhishek Trivedi.mp4','Abhishek Trivedi'],['IMG_0797.mp4','Abhishek Trivedi'],
+  ['Bimala.mp4','Bimala Upadhyaya'],['IMG_0800 .mp4','Bimala Upadhyaya'],
   ['IMG_0794 .mp4','Akash Singh'],
-  ['IMG_0817.mp4','Ceremony 1'],
-  ['IMG_0818.mp4','Ceremony 2'],
-  ['IMG_0819.mp4','Ceremony 3'],
-  ['IMG_0830.mp4','Ceremony 4']
+  ['IMG_0817.mp4','Ceremony 1'],['IMG_0818.mp4','Ceremony 2'],
+  ['IMG_0819.mp4','Ceremony 3'],['IMG_0830.mp4','Ceremony 4']
 ];
 /* ============================================================ */
 
-/* ---- photo viewer ---- */
-let PHOTOS=PHOTOS_ALL.slice(),cur=0,lastDir=1,swiped=false;
-const si=$('#si'),sm=$('#sm'),lb=$('#lb'),tl=$('#tl'),fm=$('#fm');
-/* thumbnails keep their index in data-i; broken ones are hidden, never removed, so indexes stay correct */
-const renderThumbs=()=>{
-  $('#th').innerHTML=PHOTOS.map((f,i)=>'<div data-i="'+i+'"><img src="'+U(f)+'" alt="" loading="lazy" decoding="async"></div>').join('');
-  $$('#th img').forEach(im=>im.addEventListener('error',()=>{im.parentNode.style.display='none'}));
-  $$('#th div').forEach(d=>d.classList.toggle('on',+d.dataset.i===cur));
-};
-function go(i,dir){
-  if(!PHOTOS.length)return;
-  lastDir=dir||(i>=cur?1:-1);
-  cur=(i+PHOTOS.length)%PHOTOS.length;
-  sm.style.display='none';si.style.display='';
-  tl.style.transform='';
-  si.src=U(PHOTOS[cur]);
-  $('#ct').textContent=String(cur+1).padStart(2,'0')+' / '+String(PHOTOS.length).padStart(2,'0');
-  $$('#th div').forEach(d=>d.classList.toggle('on',+d.dataset.i===cur));
-  const t=$('#th .on');t&&t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
-}
-si.onload=()=>{
-  si.classList.toggle('pt',si.naturalHeight>si.naturalWidth*1.05);
-  if(reduce)return;
-  si.style.setProperty('--fr',(lastDir>0?90:-90)+'deg');
-  si.style.animation='none';si.offsetWidth;
-  si.style.animation='flip .85s cubic-bezier(.2,.75,.2,1) both';
-};
-si.onerror=()=>{
-  const bad=PHOTOS[cur];
-  PHOTOS=PHOTOS.filter(f=>f!==bad);
-  if(PHOTOS.length){renderThumbs();go(cur>=PHOTOS.length?0:cur,lastDir)}
-  else{si.style.display='none';sm.style.display='block';sm.textContent='No photos found. Check the file names in PHOTOS_ALL.';$('#ct').textContent=''}
-};
-fm.addEventListener('pointermove',e=>{
-  if(reduce||e.pointerType==='touch')return;
-  const r=fm.getBoundingClientRect();
-  const px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
-  tl.style.transform='rotateX('+(-py*16).toFixed(2)+'deg) rotateY('+(px*20).toFixed(2)+'deg)';
-});
-fm.addEventListener('pointerleave',()=>{tl.style.transform=''});
-si.onclick=()=>{if(swiped){swiped=false;return}lb.querySelector('img').src=si.src;lb.style.display='grid'};
-lb.onclick=()=>lb.style.display='none';
-$('#pv').onclick=()=>go(cur-1,-1);
-$('#nx').onclick=()=>go(cur+1,1);
-$('#th').onclick=e=>{const d=e.target.closest('div[data-i]');d&&go(+d.dataset.i)};
-addEventListener('keydown',e=>{
-  if(e.key==='Escape')lb.style.display='none';
-  if(!$('#v-photos').classList.contains('on'))return;
-  if(e.key==='ArrowLeft')go(cur-1,-1);
-  if(e.key==='ArrowRight')go(cur+1,1);
-});
-let sx=0;
-si.addEventListener('pointerdown',e=>{sx=e.clientX;swiped=false});
-si.addEventListener('pointerup',e=>{const d=e.clientX-sx;if(Math.abs(d)>50){swiped=true;go(cur+(d<0?1:-1),d<0?1:-1)}});
-renderThumbs();
+/* music */
+const bgm=$('#bgm'),mb=$('#music');
+const setM=on=>mb.textContent=on?'\u266A Pause music':'\u266A Play music';
+mb.onclick=()=>{if(bgm.paused)bgm.play().catch(()=>{});else bgm.pause()};
+bgm.addEventListener('play',()=>setM(true));bgm.addEventListener('pause',()=>setM(false));
 
-/* ---- videos (built the first time the Videos page opens) ---- */
+/* intro */
+let entered=false;
+function enter(){
+  if(entered)return;entered=true;
+  const i=$('#intro');i.classList.add('open');document.body.classList.remove('lock');
+  setTimeout(()=>i.classList.add('gone'),900);
+  bgm.play().catch(()=>{});
+}
+$('#intro').onclick=enter;
+$('#enter').onclick=e=>{e.stopPropagation();enter()};
+
+/* routing */
+const views=['home','photos','videos'];let vb=false;
+function route(){
+  let h=location.hash.slice(1);if(!views.includes(h))h='home';
+  views.forEach(v=>{$('#v-'+v).classList.toggle('on',v===h);$('nav a[data-v="'+v+'"]').classList.toggle('on',v===h)});
+  if(h==='videos'&&!vb){vb=true;buildVideos()}
+  if(h!=='videos')$$('.vid video').forEach(v=>v.pause());
+  scrollTo(0,0);
+}
+addEventListener('hashchange',route);
+
+/* rows */
+const hide=e=>e.target.closest('.card').style.display='none';
+const img=(f,a)=>'<img src="'+U(f)+'" alt="'+a+'" loading="lazy" onerror="this.closest(\'.card\').style.display=\'none\'">';
+$('#r-cast').innerHTML=CAST.map(c=>'<a class="card pos" href="#photos">'+img(c[0],c[1])+'<div class="cp">'+c[1]+'<small>Graduate</small></div></a>').join('');
+$('#r-photos').innerHTML=PHOTOS.slice(0,12).map((f,i)=>'<div class="card wide" data-p="'+i+'">'+img(f,'Ceremony photo '+(i+1))+'</div>').join('');
+const THUMB={'Saddam Ansari':'IMG_2049.jpg','Abhishek Trivedi':'Insta_Saver_@abhi.k.trivedi_dp_HD.jpg','Shivam Singh':'Insta_Saver_@shivu_17_dp_HD.jpg','Bimala Upadhyaya':'WhatsApp Image 2026-10-23 at 21.24.52.jpeg','Akash Singh':'akash & Abhi.jpg','Ceremony 1':'IMG_0816.jpg','Ceremony 2':'IMG_0822.jpg','Ceremony 3':'IMG_0847.jpg','Ceremony 4':'IMG_0808.jpg'};
+$('#r-vids').innerHTML=VIDEOS.map((v,i)=>'<a class="card wide vt" href="#videos">'+img(THUMB[v[1]],v[1])+'<span>&#9654;</span><div class="cp">'+v[1]+'<small>Episode '+(i+1)+'</small></div></a>').join('');
+$('#pg').innerHTML=PHOTOS.map((f,i)=>'<div class="card" data-p="'+i+'">'+img(f,'Ceremony photo '+(i+1))+'</div>').join('');
+$$('.row').forEach(r=>{
+  const rail=r.querySelector('.rail');
+  r.querySelector('.l').onclick=()=>rail.scrollBy({left:-rail.clientWidth*.8,behavior:'smooth'});
+  r.querySelector('.r').onclick=()=>rail.scrollBy({left:rail.clientWidth*.8,behavior:'smooth'});
+});
+
+/* lightbox */
+let cur=0;const lb=$('#lb'),li=lb.querySelector('img');
+function show(i){cur=(i+PHOTOS.length)%PHOTOS.length;li.src=U(PHOTOS[cur]);$('#lc').textContent=(cur+1)+' / '+PHOTOS.length;lb.classList.add('on')}
+document.addEventListener('click',e=>{const c=e.target.closest('[data-p]');if(c)show(+c.dataset.p)});
+$('#lp').onclick=()=>show(cur-1);$('#ln').onclick=()=>show(cur+1);$('#lx').onclick=()=>lb.classList.remove('on');
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove('on')};
+addEventListener('keydown',e=>{
+  if(!lb.classList.contains('on'))return;
+  if(e.key==='Escape')lb.classList.remove('on');
+  if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);
+});
+let sx=0;li.addEventListener('pointerdown',e=>sx=e.clientX);
+li.addEventListener('pointerup',e=>{const d=e.clientX-sx;if(Math.abs(d)>50)show(cur+(d<0?1:-1))});
+
+/* videos */
 const clean=t=>String(t).replace(/[<>&"]/g,'');
-function renderVideos(l){
-  $('.vgrid').innerHTML=l.map(v=>
-    '<div class="vf"><small>'+clean(v[1])+'</small><div class="vid">'+
-    '<span class="vm">Loading '+clean(v[0])+'\u2026</span>'+
-    '<video controls playsinline preload="metadata" data-f="'+clean(v[0])+'" src="'+U(v[0])+'"></video>'+
-    '</div></div>'
-  ).join('');
+function buildVideos(){
+  $('.vgrid').innerHTML=VIDEOS.map(v=>'<div class="vf"><small>'+clean(v[1])+'</small><div class="vid"><span class="vm">Loading '+clean(v[0])+'\u2026</span><video controls playsinline preload="metadata" data-f="'+clean(v[0])+'" src="'+U(v[0])+'"></video></div></div>').join('');
   $$('.vid video').forEach(vd=>{
     const m=vd.previousElementSibling;
-    const bad=why=>{
-      vd.style.display='none';
-      m.style.display='';
-      m.innerHTML=why+'<br><br>Check that <b>'+vd.dataset.f+'</b> is uploaded with exactly this name (capitals and spaces count).';
-    };
+    const bad=w=>{vd.style.display='none';m.style.display='';m.innerHTML=w+'<br>Check that <b>'+vd.dataset.f+'</b> is uploaded with exactly this name.'};
     vd.addEventListener('error',()=>bad('Can\u2019t load '+vd.dataset.f+'.'));
-    vd.addEventListener('loadedmetadata',()=>{
-      if(!vd.videoWidth)bad(vd.dataset.f+' loaded without a picture (an iPhone HEVC video). Re-export it as H.264 .mp4.');
-      else m.style.display='none';
-    });
-    vd.addEventListener('play',()=>{
-      $$('.vid video').forEach(o=>{if(o!==vd)o.pause()});
-      if(!bgm.paused)bgm.pause();
-    });
+    vd.addEventListener('loadedmetadata',()=>{if(!vd.videoWidth)bad(vd.dataset.f+' has no picture (iPhone HEVC). Re-export as H.264 .mp4.');else m.style.display='none'});
+    vd.addEventListener('play',()=>{$$('.vid video').forEach(o=>{if(o!==vd)o.pause()});if(!bgm.paused)bgm.pause()});
   });
 }
-
-
-/* ---- sizing + start ---- */
-function sizeAll(){buildRing();target()}
-/* ---- scroll reveal ---- */
-if('IntersectionObserver' in window&&!reduce){
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-  $$('h2,.sub,.nm,.cta a,.vf').forEach(el=>{el.classList.add('rv');io.observe(el)});
-}
-go(0);
 route();
 </script></body></html>
