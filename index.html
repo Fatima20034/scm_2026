@@ -120,7 +120,7 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 
 <div id="intro"><div class="h h1"></div><div class="h h2"></div><div class="t"><p>One Year</p><p>Countless late nights.</p><p>One degree.</p><button id="enter">ENTER</button></div></div>
 
-<nav><a class="l" href="#home">SCM Class of 2026</a><div><a href="#home" data-v="home">Home</a><a href="#photos" data-v="photos">Photos</a><a href="#videos" data-v="videos">Videos</a></div></nav>
+<nav><a class="l" href="#home">UoW SCM Class of 2026</a><div><a href="#home" data-v="home">Home</a><a href="#photos" data-v="photos">Photos</a><a href="#videos" data-v="videos">Videos</a></div></nav>
 
 <main class="view" id="v-home">
 <div class="hero"><canvas id="pc"></canvas><div class="lo"><b>Master of Supply Chain Management</b><span>Saddam · Abhishek · Shivam · Bimala </span></div><div class="hint">Move through the gold. Click to scatter.</div></div>
@@ -135,6 +135,7 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 <a class="nm" data-i="Insta_Saver_@abhi.k.trivedi_dp_HD.jpg"><span>Abhishek</span><small>Trivedi</small></a>
 <a class="nm" data-i="Insta_Saver_@shivu_17_dp_HD.jpg"><span>Shivam</span><small>Singh</small></a>
 <a class="nm" data-i="WhatsApp Image 2026-10-23 at 21.24.52.jpeg"><span>Bimala</span><small>Upadhyay</small></a></div></section>
+<a class="nm" data-i="WhatsApp Image 2026-10-23 at 21.24.52.jpeg"><span>Akash</span><small>Singh</small></a></div></section>
 <img id="fl" alt="">
 
 <section><div class="cta"><a href="#photos"><b>Photos</b>Every frame of the day</a><a href="#videos"><b>Videos</b>Watch it again</a></div></section>
@@ -144,7 +145,7 @@ footer p{margin-top:24px;color:var(--mute);letter-spacing:.2em;text-transform:up
 
 <main class="view" id="v-videos"><section class="page"><h2>The ceremony, on film</h2><p class="sub">Videos from graduation day.</p><div class="vgrid"></div></section></main>
 
-<footer><div class="bd">Congratulations</div><p>Saddam · Abhishek · Shivam · Bimala ~ a degree well earned</p></footer>
+<footer><div class="bd">Congratulations</div><p>Saddam · Abhishek · Shivam · Bimala· Akash ~ a degree well earned</p></footer>
 
 <audio id="bgm" src="aj_kal_zindagi.mp3" loop preload="auto"></audio>
 <button id="music">&#9834; Play music</button>
@@ -170,7 +171,7 @@ views.forEach(v=>{$('#v-'+v).classList.toggle('on',v===h);$('nav a[data-v="'+v+'
 addEventListener('hashchange',route);
 
 /* ---- gold particle words ---- */
-const c=$('#pc'),x=c.getContext('2d'),words=['CONGRATS','2026','SCM','PROUD','SHIVAM','SADDAM','ABHISHEK','BIMALA'];
+const c=$('#pc'),x=c.getContext('2d'),words=['CONGRATS','2026','SCM','PROUD','SHIVAM','SADDAM','ABHISHEK','BIMALA','AKASH'];
 const N=innerWidth<700?2600:5200;let W,H,P=[],wi=0,mx=-999,my=-999,vis=true;
 for(let i=0;i<N;i++)P.push({x:innerWidth/2,y:innerHeight/2,vx:(Math.random()-.5)*30,vy:(Math.random()-.5)*30,tx:0,ty:0,s:Math.random()*.8+.7,h:35+Math.random()*25,l:60+Math.random()*30,o:Math.random()*6});
 function target(){W=c.width=c.clientWidth;H=c.height=c.clientHeight;if(!W)return;
@@ -201,8 +202,7 @@ let mxp=0,lastY=scrollY,sk=0;
 if(-mxp>=mq.scrollWidth/2)mxp=0;mq.style.transform='translateX('+mxp+'px) skewX('+(-sk*.4)+'deg)';requestAnimationFrame(m)})();
 
 /* ---- 3D ring ---- */
-const items=[['IMG_2049.jpg','Saddam Ansari','S'],['Insta_Saver_@abhi.k.trivedi_dp_HD.jpg','Abhishek Trivedi','A'],['Insta_Saver_@shivu_17_dp_HD.jpg','Shivam Singh','S'],['WhatsApp Image 2026-10-23 at 21.24.52.jpeg','Bimala Upadhyay','S'],['IMG_0850.jpg','The big day','1'],['IMG_0808.jpg','Together','2'],['IMG_0811.jpg','Caps in the air','3'],['IMG_0822.jpg','Worth every night','4'],['IMG_0843.jpg','Class of 2026','5']];
-const ring=$('#ring'),cap=$('#cap'),stage=$('#stage'),n=items.length,step=360/n;
+const items=[['IMG_2049.jpg','Saddam Ansari','S'],['Insta_Saver_@abhi.k.trivedi_dp_HD.jpg','Abhishek Trivedi','A'],['Insta_Saver_@shivu_17_dp_HD.jpg','Shivam Singh','S'],['WhatsApp Image 2026-10-23 at 21.24.52.jpeg','Bimala Upadhyay','S'],['AKASH_IMAGE.jpg','Akash Singh','A'],['IMG_0850.jpg','The big day','1'],['IMG_0808.jpg','Together','2'],['IMG_0811.jpg','Caps in the air','3'],['IMG_0822.jpg','Worth every night','4'],['IMG_0843.jpg','Class of 2026','5']];const ring=$('#ring'),cap=$('#cap'),stage=$('#stage'),n=items.length,step=360/n;
 let ang=0,vel=.18,drag=false,lx=0,last=-1;
 ring.innerHTML=items.map(i=>'<div class="pn"><b>'+i[2]+'</b><img src="'+U(i[0])+'" alt="'+i[1]+'" onerror="this.remove()"></div>').join('');
 function buildRing(){const pw=ring.offsetWidth,R=pw/2/Math.tan(Math.PI/n)+24;[...ring.children].forEach((p,i)=>p.style.transform='rotateY('+i*step+'deg) translateZ('+R+'px)');ring.dataset.r=R}
@@ -229,8 +229,22 @@ const KNOWN=new Set(["IMG_0807.jpg", "IMG_0808.jpg", "IMG_0809.jpg", "IMG_0810.j
 (function(){const maybe=ALL_PHOTOS.filter(f=>!KNOWN.has(f)),found=new Set();let left=maybe.length;if(!left)return;
 const fin=()=>{if(--left)return;if(!found.size)return;const keep=PHOTOS[cur];PHOTOS=ALL_PHOTOS.filter(f=>KNOWN.has(f)||found.has(f));renderThumbs();const k=PHOTOS.indexOf(keep);go(k<0?0:k)};
 maybe.forEach(f=>{const im=new Image();im.onload=()=>{found.add(f);fin()};im.onerror=fin;im.src=U(f)})})();
-const VIDEOS=[['Saddam Ansari.mov','Saddam Ansari'],['Shivam Singh .mp4','Shivam Singh'],['Abhishek Trivedi.mov','Abhishek Trivedi'],['Bimala.mov','Bimala Upadhyay'],['IMG_0817.mp4','Ceremony 1'],['IMG_0818.mp4','Ceremony 2'],['IMG_0819.mp4','Ceremony 3'],['IMG_0830.mp4','Ceremony 4']];
-const si=$('#si'),sm=$('#sm');let cur=0;
+const VIDEOS = [
+  ['Saddam Ansari.mov', 'Saddam Ansari'],
+  ['Shivam Singh .mp4', 'Shivam Singh'],
+  ['Abhishek Trivedi.mov', 'Abhishek Trivedi'],
+  ['Bimala.mov', 'Bimala Upadhyay'],
+  ['IMG_0787.MOV', 'Saddam Ansari'],
+  ['IMG_0796.MOV', 'Shivam Singh'],
+  ['IMG_0797.MOV', 'Abhishek Trivedi'],
+  ['IMG_0800.MOV', 'Bimala Upadhyay'],
+  ['IMG_0794.MOV', 'Akash Singh'],
+  ['IMG_0817.mp4', 'Ceremony 1'],
+  ['IMG_0818.mp4', 'Ceremony 2'],
+  ['IMG_0819.mp4', 'Ceremony 3'],
+  ['IMG_0830.mp4', 'Ceremony 4'],
+];                                   // <- closing bracket and semicolon
+];const si=$('#si'),sm=$('#sm');let cur=0;
 const renderThumbs=()=>$('#th').innerHTML=PHOTOS.map((f,i)=>'<div data-i="'+i+'"><img src="'+U(f)+'" alt="" onerror="this.remove()"></div>').join('');renderThumbs();
 function go(i){cur=(i+PHOTOS.length)%PHOTOS.length;sm.style.display='none';si.style.display='';si.style.animation='none';si.offsetWidth;si.style.animation='';si.src=U(PHOTOS[cur]);
 $('#ct').textContent=String(cur+1).padStart(2,'0')+' / '+String(PHOTOS.length).padStart(2,'0');
