@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UoW SCM Class of 2026 · prime video</title>
+<link rel="icon" href="data:,">
 <style>
 :root{--bg:#0f171e;--bg2:#1a242f;--blue:#00a8e1;--fg:#fff;--mute:#8197a4;--line:rgba(255,255,255,.12)}
 *{box-sizing:border-box;margin:0}
@@ -8,6 +9,7 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--fg);font:400 1rem/1.5 "Amazon Ember",Ember,"Segoe UI",Helvetica,Arial,sans-serif;overflow-x:hidden}
 body.lock{overflow:hidden;height:100%}
 a{color:inherit;text-decoration:none}
+button{font-family:inherit}
 a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .logo{font-weight:700;letter-spacing:-.02em;display:inline-block;position:relative}
 .logo i{font-style:normal;color:var(--blue)}
@@ -17,20 +19,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 #intro.open{opacity:0;pointer-events:none}#intro.gone{display:none}
 #intro .logo{font-size:clamp(2.6rem,10vw,6rem);opacity:0;animation:in 1.2s .2s forwards}
 #intro p{color:var(--mute);margin-top:30px;opacity:0;animation:in 1s 1.2s forwards}
-#enter{margin-top:34px;background:var(--blue);color:#fff;border:0;border-radius:4px;padding:14px 34px;font:700 1rem inherit;font-family:inherit;cursor:pointer;opacity:0;animation:in 1s 1.8s forwards}
+#enter{margin-top:34px;background:var(--blue);color:#fff;border:0;border-radius:4px;padding:14px 34px;font-size:1rem;font-weight:700;cursor:pointer;opacity:0;animation:in 1s 1.8s forwards}
 #enter:hover{background:#33bbe9}
 @keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;gap:28px;padding:14px 4vw;background:linear-gradient(#0f171e 20%,rgba(15,23,30,0));}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;gap:28px;padding:14px 4vw;background:linear-gradient(#0f171e 20%,rgba(15,23,30,0))}
 nav .logo{font-size:1.5rem;margin-right:10px}
 nav a.t{color:#c5d1d9;font-weight:500;padding:4px 0;border-bottom:2px solid transparent}
 nav a.t:hover,nav a.t.on{color:#fff;border-color:#fff}
 nav .pill{margin-left:auto;color:var(--mute);font-size:.85rem}
 .view{display:none}.view.on{display:block}
 
-.{position:relative;min-height:86vh;display:flex;align-items:flex-end;padding:120px 4vw 70px;background:#0b1117 url("IMG_0810.jpg") center 30%/cover}
-.::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0f171e 15%,rgba(15,23,30,.55) 55%,rgba(15,23,30,.1)),linear-gradient(0deg,#0f171e 0,transparent 40%)}
-.>div{position:relative;max-width:640px}
+.hero{position:relative;min-height:86vh;display:flex;align-items:flex-end;padding:120px 4vw 70px;background:#0b1117 url("IMG_0810.jpg") center 30%/cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0f171e 15%,rgba(15,23,30,.55) 55%,rgba(15,23,30,.1)),linear-gradient(0deg,#0f171e 0,transparent 40%)}
+.hero>div{position:relative;max-width:640px}
 .badge{display:inline-flex;gap:8px;align-items:center;color:var(--blue);font-weight:700;margin-bottom:14px}
 .badge b{background:var(--blue);color:#0f171e;border-radius:50%;width:18px;height:18px;display:grid;place-items:center;font-size:.7rem}
 h1{font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.05;font-weight:700;letter-spacing:-.02em}
@@ -39,7 +41,7 @@ h1{font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.05;font-weight:700;letter-sp
 .desc{color:#dfe7ec;max-width:56ch}
 .cast{color:var(--mute);margin-top:12px;font-size:.9rem}.cast b{color:#c5d1d9;font-weight:500}
 .btns{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
-.b{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:4px;font-weight:700;cursor:pointer;border:0;font:inherit;font-weight:700}
+.b{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:4px;font-weight:700;cursor:pointer;border:0;font-size:1rem}
 .b.p{background:#fff;color:#0f171e}.b.p:hover{background:#dfe7ec}
 .b.s{background:rgba(255,255,255,.18);color:#fff}.b.s:hover{background:rgba(255,255,255,.3)}
 
@@ -56,7 +58,8 @@ h1{font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.05;font-weight:700;letter-sp
 .pos{width:clamp(130px,17vw,190px);aspect-ratio:2/3}
 .wide{width:clamp(220px,26vw,320px);aspect-ratio:16/9}
 .vt{display:grid;place-items:center;background:linear-gradient(135deg,#1b2a38,#0f171e)}
-.vt img{position:absolute;inset:0;object-position:center 25%}.vt span{position:relative;background:rgba(15,23,30,.45);width:48px;height:48px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-size:1.1rem;padding-left:3px}
+.vt img{position:absolute;inset:0;object-position:center 25%}
+.vt span{position:relative;background:rgba(15,23,30,.45);width:48px;height:48px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-size:1.1rem;padding-left:3px}
 .arr{position:absolute;top:50px;bottom:16px;width:4vw;min-width:34px;z-index:5;border:0;background:rgba(15,23,30,.7);color:#fff;font-size:1.8rem;cursor:pointer;opacity:0;transition:.2s}
 .row:hover .arr{opacity:1}.arr.l{left:0}.arr.r{right:0}.arr:hover{background:rgba(0,168,225,.8)}
 @media(hover:none){.arr{display:none}}
@@ -77,14 +80,14 @@ footer b{display:block;color:#fff;font-size:1.3rem;margin-bottom:6px}
 
 #lb{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:80;display:none;place-items:center}
 #lb.on{display:grid}
-#lb img{max-width:88vw;max-height:86vh;object-fit:contain}
+#lb img{max-width:88vw;max-height:86vh;object-fit:contain;touch-action:pan-y;user-select:none}
 #lb button{position:absolute;background:rgba(255,255,255,.12);border:0;color:#fff;border-radius:50%;width:48px;height:48px;font-size:1.6rem;cursor:pointer}
 #lb button:hover{background:var(--blue)}
-#lp{left:16px;top:50%}#ln{right:16px;top:50%}#lx{right:16px;top:16px}
+#lp{left:16px;top:50%;transform:translateY(-50%)}#ln{right:16px;top:50%;transform:translateY(-50%)}#lx{right:16px;top:16px}
 #lc{position:absolute;bottom:18px;color:var(--mute);font-size:.9rem}
-#music{position:fixed;right:16px;bottom:16px;z-index:40;background:rgba(15,23,30,.9);color:#fff;border:1px solid var(--mute);border-radius:99px;padding:10px 18px;font:600 .85rem inherit;font-family:inherit;cursor:pointer}
+#music{position:fixed;right:16px;bottom:16px;z-index:40;background:rgba(15,23,30,.9);color:#fff;border:1px solid var(--mute);border-radius:99px;padding:10px 18px;font-size:.85rem;font-weight:600;cursor:pointer}
 #music:hover{border-color:var(--blue);color:var(--blue)}
-@media(max-width:700px){nav{gap:16px}nav .pill{display:none}.{min-height:78vh}}
+@media(max-width:700px){nav{gap:16px}nav .pill{display:none}.hero{min-height:78vh}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
 </style></head><body class="lock">
 
@@ -92,34 +95,34 @@ footer b{display:block;color:#fff;font-size:1.3rem;margin-bottom:6px}
 
 <nav><a class="logo" href="#home">UoW SCM <i>PRIME</i></a><a class="t" href="#home" data-v="home">Home</a><a class="t" href="#photos" data-v="photos">Photos</a><a class="t" href="#videos" data-v="videos">Videos</a><span class="pill">Class of 2026</span></nav>
 
-<main class="view" id="v-home">
-<div class=""><div>
+<section class="view" id="v-home">
+<div class="hero"><div>
 <div class="badge"><b>&#10003;</b>Included with Prime</div>
 <h1>Master of Supply Chain Management</h1>
-<div class="meta"><span>2026</span><span>4 Season</span><em>HD</em><em>UoW</em><span>Drama · Feel-good · True story</span></div>
+<div class="meta"><span>2026</span><span>1 Season</span><em>HD</em><em>UoW</em><span>Drama · Feel-good · True story</span></div>
 <p class="desc">One year. Countless late nights. Five graduates walk the stage and finish what they started. Watch the ceremony, relive the photos and see the moments that made it worth it.</p>
 <p class="cast"><b>Starring</b> Saddam Ansari, Abhishek Trivedi, Shivam Singh, Bimala Upadhyaya, Akash Singh</p>
 <div class="btns"><a class="b p" href="#videos">&#9654; Watch now</a><a class="b s" href="#photos">+ View photos</a></div>
 </div></div>
 
-<div class="row"><h3>Cast &amp; crew</h3><button class="arr l" aria-label="Scroll left">&#8249;</button><div class="rail" id="r-cast"></div><button class="arr r" aria-label="Scroll right">&#8250;</button></div>
-<div class="row"><h3>Photos from the ceremony<a href="#photos">See all</a></h3><button class="arr l" aria-label="Scroll left">&#8249;</button><div class="rail" id="r-photos"></div><button class="arr r" aria-label="Scroll right">&#8250;</button></div>
-<div class="row"><h3>Episodes<a href="#videos">See all</a></h3><button class="arr l" aria-label="Scroll left">&#8249;</button><div class="rail" id="r-vids"></div><button class="arr r" aria-label="Scroll right">&#8250;</button></div>
-</main>
+<div class="row"><h3>Cast &amp; crew</h3><button class="arr l" type="button" aria-label="Scroll left">&#8249;</button><div class="rail" id="r-cast"></div><button class="arr r" type="button" aria-label="Scroll right">&#8250;</button></div>
+<div class="row"><h3>Photos from the ceremony<a href="#photos">See all</a></h3><button class="arr l" type="button" aria-label="Scroll left">&#8249;</button><div class="rail" id="r-photos"></div><button class="arr r" type="button" aria-label="Scroll right">&#8250;</button></div>
+<div class="row"><h3>Episodes<a href="#videos">See all</a></h3><button class="arr l" type="button" aria-label="Scroll left">&#8249;</button><div class="rail" id="r-vids"></div><button class="arr r" type="button" aria-label="Scroll right">&#8250;</button></div>
+</section>
 
-<main class="view" id="v-photos"><div class="page"><h2>Photos</h2><p class="sub">Graduation day. Select a photo to enlarge it.</p><div class="pgrid" id="pg"></div></div></main>
-<main class="view" id="v-videos"><div class="page"><h2>Videos</h2><p class="sub">Season 1 · Graduation day.</p><div class="vgrid"></div></div></main>
+<section class="view" id="v-photos"><div class="page"><h2>Photos</h2><p class="sub">Graduation day. Select a photo to enlarge it.</p><div class="pgrid" id="pg"></div></div></section>
+<section class="view" id="v-videos"><div class="page"><h2>Videos</h2><p class="sub">Season 1 · Graduation day.</p><div class="vgrid"></div></div></section>
 
 <footer><div class="logo">UoW SCM<i>PRIME</i></div><b>Congratulations, Class of 2026</b>Saddam Ansari · Abhishek Trivedi · Shivam Singh · Bimala Upadhyaya · Akash Singh. A degree well earned.</footer>
 
 <audio id="bgm" src="aj_kal_zindagi.mp3" loop preload="none"></audio>
 <button id="music" type="button">&#9834; Play music</button>
-<div id="lb"><button id="lx" aria-label="Close">&times;</button><button id="lp" aria-label="Previous">&#8249;</button><img alt=""><button id="ln" aria-label="Next">&#8250;</button><div id="lc"></div></div>
+<div id="lb"><button id="lx" type="button" aria-label="Close">&times;</button><button id="lp" type="button" aria-label="Previous">&#8249;</button><img alt=""><button id="ln" type="button" aria-label="Next">&#8250;</button><div id="lc"></div></div>
 
 <script>
-const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s),U=encodeURI;
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s),U=encodeURIComponent;
 
-/* ===== YOUR FILES: names must match your GitHub repo exactly ===== */
+/* ===== YOUR FILES: names must match your GitHub repo exactly (case + spaces) ===== */
 const CAST=[
   ['IMG_2049.jpg','Saddam Ansari'],
   ['Insta_Saver_@abhi.k.trivedi_dp_HD.jpg','Abhishek Trivedi'],
@@ -145,13 +148,17 @@ const VIDEOS=[
   ['IMG_0817.mp4','Ceremony 1'],['IMG_0818.mp4','Ceremony 2'],
   ['IMG_0819.mp4','Ceremony 3'],['IMG_0830.mp4','Ceremony 4']
 ];
-/* ============================================================ */
+/* ================================================================================ */
+
+const esc=t=>String(t).replace(/[<>&"']/g,'');
 
 /* music */
 const bgm=$('#bgm'),mb=$('#music');
 const setM=on=>mb.textContent=on?'\u266A Pause music':'\u266A Play music';
 mb.onclick=()=>{if(bgm.paused)bgm.play().catch(()=>{});else bgm.pause()};
-bgm.addEventListener('play',()=>setM(true));bgm.addEventListener('pause',()=>setM(false));
+bgm.addEventListener('play',()=>setM(true));
+bgm.addEventListener('pause',()=>setM(false));
+bgm.addEventListener('error',()=>{mb.style.display='none'});
 
 /* intro */
 let entered=false;
@@ -168,20 +175,22 @@ $('#enter').onclick=e=>{e.stopPropagation();enter()};
 const views=['home','photos','videos'];let vb=false;
 function route(){
   let h=location.hash.slice(1);if(!views.includes(h))h='home';
-  views.forEach(v=>{$('#v-'+v).classList.toggle('on',v===h);$('nav a[data-v="'+v+'"]').classList.toggle('on',v===h)});
+  views.forEach(v=>{
+    $('#v-'+v).classList.toggle('on',v===h);
+    const l=$('nav a[data-v="'+v+'"]');if(l)l.classList.toggle('on',v===h);
+  });
   if(h==='videos'&&!vb){vb=true;buildVideos()}
   if(h!=='videos')$$('.vid video').forEach(v=>v.pause());
-  scrollTo(0,0);
+  window.scrollTo(0,0);
 }
 addEventListener('hashchange',route);
 
 /* rows */
-const hide=e=>e.target.closest('.card').style.display='none';
-const img=(f,a)=>'<img src="'+U(f)+'" alt="'+a+'" loading="lazy" onerror="this.closest(\'.card\').style.display=\'none\'">';
-$('#r-cast').innerHTML=CAST.map(c=>'<a class="card pos" href="#photos">'+img(c[0],c[1])+'<div class="cp">'+c[1]+'<small>Graduate</small></div></a>').join('');
+const img=(f,a)=>'<img src="'+U(f)+'" alt="'+esc(a)+'" loading="lazy" onerror="this.closest(\'.card\').style.display=\'none\'">';
+$('#r-cast').innerHTML=CAST.map(c=>'<a class="card pos" href="#photos">'+img(c[0],c[1])+'<div class="cp">'+esc(c[1])+'<small>Graduate</small></div></a>').join('');
 $('#r-photos').innerHTML=PHOTOS.slice(0,12).map((f,i)=>'<div class="card wide" data-p="'+i+'">'+img(f,'Ceremony photo '+(i+1))+'</div>').join('');
 const THUMB={'Saddam Ansari':'IMG_2049.jpg','Abhishek Trivedi':'Insta_Saver_@abhi.k.trivedi_dp_HD.jpg','Shivam Singh':'Insta_Saver_@shivu_17_dp_HD.jpg','Bimala Upadhyaya':'WhatsApp Image 2026-10-23 at 21.24.52.jpeg','Akash Singh':'akash & Abhi.jpg','Ceremony 1':'IMG_0816.jpg','Ceremony 2':'IMG_0822.jpg','Ceremony 3':'IMG_0847.jpg','Ceremony 4':'IMG_0808.jpg'};
-$('#r-vids').innerHTML=VIDEOS.map((v,i)=>'<a class="card wide vt" href="#videos">'+img(THUMB[v[1]],v[1])+'<span>&#9654;</span><div class="cp">'+v[1]+'<small>Episode '+(i+1)+'</small></div></a>').join('');
+$('#r-vids').innerHTML=VIDEOS.map((v,i)=>'<a class="card wide vt" href="#videos">'+img(THUMB[v[1]]||PHOTOS[0],v[1])+'<span>&#9654;</span><div class="cp">'+esc(v[1])+'<small>Episode '+(i+1)+'</small></div></a>').join('');
 $('#pg').innerHTML=PHOTOS.map((f,i)=>'<div class="card" data-p="'+i+'">'+img(f,'Ceremony photo '+(i+1))+'</div>').join('');
 $$('.row').forEach(r=>{
   const rail=r.querySelector('.rail');
@@ -189,24 +198,35 @@ $$('.row').forEach(r=>{
   r.querySelector('.r').onclick=()=>rail.scrollBy({left:rail.clientWidth*.8,behavior:'smooth'});
 });
 
-/* lightbox */
-let cur=0;const lb=$('#lb'),li=lb.querySelector('img');
-function show(i){cur=(i+PHOTOS.length)%PHOTOS.length;li.src=U(PHOTOS[cur]);$('#lc').textContent=(cur+1)+' / '+PHOTOS.length;lb.classList.add('on')}
-document.addEventListener('click',e=>{const c=e.target.closest('[data-p]');if(c)show(+c.dataset.p)});
-$('#lp').onclick=()=>show(cur-1);$('#ln').onclick=()=>show(cur+1);$('#lx').onclick=()=>lb.classList.remove('on');
-lb.onclick=e=>{if(e.target===lb)lb.classList.remove('on')};
+/* lightbox (skips photos that fail to load) */
+let cur=0,dir=1,tries=0;
+const lb=$('#lb'),li=lb.querySelector('img');
+function show(i,d){
+  dir=d||1;cur=(i+PHOTOS.length)%PHOTOS.length;
+  li.src=U(PHOTOS[cur]);$('#lc').textContent=(cur+1)+' / '+PHOTOS.length;lb.classList.add('on');
+}
+li.addEventListener('load',()=>{tries=0});
+li.addEventListener('error',()=>{if(++tries<PHOTOS.length)show(cur+dir,dir);else{tries=0;lb.classList.remove('on')}});
+const closeLb=()=>lb.classList.remove('on');
+document.addEventListener('click',e=>{const c=e.target.closest('[data-p]');if(c){tries=0;show(+c.dataset.p,1)}});
+$('#lp').onclick=()=>{tries=0;show(cur-1,-1)};
+$('#ln').onclick=()=>{tries=0;show(cur+1,1)};
+$('#lx').onclick=closeLb;
+lb.onclick=e=>{if(e.target===lb)closeLb()};
 addEventListener('keydown',e=>{
   if(!lb.classList.contains('on'))return;
-  if(e.key==='Escape')lb.classList.remove('on');
-  if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);
+  if(e.key==='Escape')closeLb();
+  else if(e.key==='ArrowLeft'){tries=0;show(cur-1,-1)}
+  else if(e.key==='ArrowRight'){tries=0;show(cur+1,1)}
 });
-let sx=0;li.addEventListener('pointerdown',e=>sx=e.clientX);
-li.addEventListener('pointerup',e=>{const d=e.clientX-sx;if(Math.abs(d)>50)show(cur+(d<0?1:-1))});
+let sx=0;
+li.addEventListener('pointerdown',e=>{sx=e.clientX});
+li.addEventListener('pointerup',e=>{const d=e.clientX-sx;if(Math.abs(d)>50){tries=0;show(cur+(d<0?1:-1),d<0?1:-1)}});
+li.addEventListener('dragstart',e=>e.preventDefault());
 
 /* videos */
-const clean=t=>String(t).replace(/[<>&"]/g,'');
 function buildVideos(){
-  $('.vgrid').innerHTML=VIDEOS.map(v=>'<div class="vf"><small>'+clean(v[1])+'</small><div class="vid"><span class="vm">Loading '+clean(v[0])+'\u2026</span><video controls playsinline preload="metadata" data-f="'+clean(v[0])+'" src="'+U(v[0])+'"></video></div></div>').join('');
+  $('.vgrid').innerHTML=VIDEOS.map(v=>'<div class="vf"><small>'+esc(v[1])+'</small><div class="vid"><span class="vm">Loading '+esc(v[0])+'\u2026</span><video controls playsinline preload="metadata" data-f="'+esc(v[0])+'" src="'+U(v[0])+'"></video></div></div>').join('');
   $$('.vid video').forEach(vd=>{
     const m=vd.previousElementSibling;
     const bad=w=>{vd.style.display='none';m.style.display='';m.innerHTML=w+'<br>Check that <b>'+vd.dataset.f+'</b> is uploaded with exactly this name.'};
